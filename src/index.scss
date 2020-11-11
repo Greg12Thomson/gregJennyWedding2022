@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+.App-header {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 
 .home-navbar .bg-dark {
     background: transparent !important;
@@ -24,6 +31,11 @@ code {
       text-decoration: underline;
       color: white;
     }
+
+    &:focus {
+      color: white;
+      text-decoration: underline;
+    }
 }
 
 .home-navbar .navbar-light .navbar-brand {
@@ -32,14 +44,32 @@ code {
     &:hover {
       color: white;
     }
+
+    &:focus {
+      color: white;
+    }
 }
 
-.home-navbar .navbar-light .navbar-text a {
+.home-navbar .navbar-text a {
     color: white;
+
+    &:focus {
+      color: white;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: white;
+      text-decoration: underline;
+    }
+}
+
+.App .btn-primary {
+  border-radius: 0;
+  background: transparent;
 }
 
 .home-navbar .btn-primary {
-    background: transparent;
     border-color: white;
     color: white;
 
@@ -48,4 +78,94 @@ code {
       border-color: black;
       color: black;
     }
+
+    &:active {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+
+    &:after {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+
+    &:focus {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+}
+
+.heading .btn-primary {
+    border-color: white;
+    color: white;
+    padding: 1rem 1.3rem;
+
+    &:hover {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+
+    &:active {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+
+    &:after {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+
+    &:focus {
+      background: white;
+      border-color: black;
+      color: black;
+    }
+}
+
+.content .btn-primary {
+    border-color: black;
+    color: black;
+
+    &:hover {
+      background: black;
+      border-color: white;
+      color: white;
+    }
+
+    &:active {
+      background: black;
+      border-color: grey;
+      color: grey;
+    }
+
+    &:after {
+      background: black;
+      border-color: white;
+      color: white;
+    }
+
+    &:focus {
+      background: black;
+      border-color: white;
+      color: white;
+    }
+}
+
+.content h3 {
+  padding: 30px;
+}
+
+.content .row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.centered {
+  justify-content: center;
 }

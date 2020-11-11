@@ -1,9 +1,14 @@
 import React from 'react';
-// import Image from './fire.jpeg'; // Import using relative path
+import { Button } from 'react-bootstrap';
+import BackgroudImage from './engament.jpeg'; // Import using relative path
+
+const style = {
+  backgroundImage: `url(${BackgroudImage})`
+}
 
 function Header() {
   return (
-    <header className="App-header">
+    <header className="App-header" style={ style }>
       <div className="heading">
         <h2>
           Jenny & Greg
@@ -11,6 +16,7 @@ function Header() {
         <p>
           October 8-9, 2022 <span>&#183;</span> Cambo Estate, Scotland
         </p>
+        <Button className="rsvp" href="#rsvp">RSVP</Button>
       </div>
     </header>
   );
