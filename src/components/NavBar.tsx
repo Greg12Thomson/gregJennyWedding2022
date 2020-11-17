@@ -10,9 +10,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#wedding">Wedding</Nav.Link>
             <Nav.Link href="#location">Location</Nav.Link>
-            <Nav.Link href="#gifts">Gifts</Nav.Link>
+            <Nav.Link href="#travel">Travel & Stay</Nav.Link>
+            <Nav.Link href="#story">Our Story</Nav.Link>
           </Nav>
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>

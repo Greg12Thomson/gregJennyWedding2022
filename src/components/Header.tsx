@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import BackgroudImage from './engament.jpeg'; // Import using relative path
+import BackgroudImage from './DSC02015.jpg';
 
 const style = {
   backgroundImage: `url(${BackgroudImage})`

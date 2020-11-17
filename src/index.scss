@@ -21,7 +21,7 @@ code {
 
 
 .home-navbar .bg-dark {
-    background: transparent !important;
+    background: #00000075 !important;
 }
 
 .home-navbar .navbar-light .navbar-nav .nav-link {
@@ -51,7 +51,7 @@ code {
 }
 
 .home-navbar .navbar-text a {
-    color: white;
+    color: black;
 
     &:focus {
       color: white;
@@ -98,6 +98,16 @@ code {
     }
 }
 
+.home-navbar .navbar-light .navbar-toggler {
+    background: white;
+    border-color: black;
+;
+    &:hover {
+      background: black;
+      border-color: white;
+    }
+}
+
 .heading .btn-primary {
     border-color: white;
     color: white;
@@ -126,6 +136,11 @@ code {
       border-color: black;
       color: black;
     }
+}
+
+.heading h2 {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 .content .btn-primary {
@@ -173,4 +188,13 @@ code {
 .ourStory .col-6 {
   padding-right: 30px;
   padding-left: 30px;
+}
+
+.footer {
+  height: auto;
+  width: 100%;
+  position: relative;
+  color: white;
+  background-color: #1d2124;
+  padding-top: 20px;
 }
