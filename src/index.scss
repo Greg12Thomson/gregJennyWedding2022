@@ -1,15 +1,13 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: Arial, Helvetica, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 .App-header {
@@ -21,47 +19,50 @@ code {
 
 
 .home-navbar .bg-dark {
-    background: #00000075 !important;
+  background: #212529 !important;
+  position: relative;
 }
 
 .home-navbar .navbar-light .navbar-nav .nav-link {
-    background: transparent;
-    color: white;
-    &:hover {
-      text-decoration: underline;
-      color: white;
-    }
+  background: transparent;
+  color: white;
 
-    &:focus {
-      color: white;
-      text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
+    color: white;
+  }
+
+  &:focus {
+    color: white;
+    text-decoration: underline;
+  }
 }
 
 .home-navbar .navbar-light .navbar-brand {
-    background: transparent;
-    color: white;
-    &:hover {
-      color: white;
-    }
+  background: transparent;
+  color: white;
 
-    &:focus {
-      color: white;
-    }
+  &:hover {
+    color: white;
+  }
+
+  &:focus {
+    color: white;
+  }
 }
 
 .home-navbar .navbar-text a {
-    color: black;
+  color: black;
 
-    &:focus {
-      color: white;
-      text-decoration: underline;
-    }
+  &:focus {
+    color: white;
+    text-decoration: underline;
+  }
 
-    &:visited {
-      color: white;
-      text-decoration: underline;
-    }
+  &:visited {
+    color: white;
+    text-decoration: underline;
+  }
 }
 
 .App .btn-primary {
@@ -70,72 +71,72 @@ code {
 }
 
 .home-navbar .btn-primary {
-    border-color: white;
-    color: white;
+  border-color: white;
+  color: white;
 
-    &:hover {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:hover {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:active {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:active {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:after {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:after {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:focus {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:focus {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 }
 
 .home-navbar .navbar-light .navbar-toggler {
-    background: white;
-    border-color: black;
-;
-    &:hover {
-      background: black;
-      border-color: white;
-    }
+  background: white;
+  border-color: black;;
+
+  &:hover {
+    background: black;
+    border-color: white;
+  }
 }
 
 .heading .btn-primary {
-    border-color: white;
-    color: white;
-    padding: 1rem 1.3rem;
+  border-color: white;
+  color: white;
+  padding: 1rem 1.3rem;
 
-    &:hover {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:hover {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:active {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:active {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:after {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:after {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 
-    &:focus {
-      background: white;
-      border-color: black;
-      color: black;
-    }
+  &:focus {
+    background: white;
+    border-color: black;
+    color: black;
+  }
 }
 
 .heading h2 {
@@ -144,32 +145,32 @@ code {
 }
 
 .content .btn-primary {
-    border-color: black;
-    color: black;
+  border-color: black;
+  color: black;
 
-    &:hover {
-      background: black;
-      border-color: white;
-      color: white;
-    }
+  &:hover {
+    background: black;
+    border-color: white;
+    color: white;
+  }
 
-    &:active {
-      background: black;
-      border-color: grey;
-      color: grey;
-    }
+  &:active {
+    background: black;
+    border-color: grey;
+    color: grey;
+  }
 
-    &:after {
-      background: black;
-      border-color: white;
-      color: white;
-    }
+  &:after {
+    background: black;
+    border-color: white;
+    color: white;
+  }
 
-    &:focus {
-      background: black;
-      border-color: white;
-      color: white;
-    }
+  &:focus {
+    background: black;
+    border-color: white;
+    color: white;
+  }
 }
 
 .content h3 {
@@ -197,4 +198,8 @@ code {
   color: white;
   background-color: #1d2124;
   padding-top: 20px;
+}
+
+.page-header {
+  padding: 50px;
 }

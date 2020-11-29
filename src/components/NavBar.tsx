@@ -4,6 +4,9 @@ import { Button, Navbar, Nav } from 'react-bootstrap';
 
 import Home from './Home';
 import Details from './Details';
+import OurStory from './OurStory';
+import GettingThere from './GettingThere';
+import Rsvp from './Rsvp';
 
 enum Pages {
   Home = "/",
@@ -33,10 +36,13 @@ function NavBar() {
             </Navbar.Collapse>
           </Navbar.Collapse>
         </Navbar>
-        <div>
+        <div className="content-wrapper">
             <Switch>
                 <Route exact path={Pages.Home} component={Home} />
                 <Route exact path={Pages.Details} component={Details} />
+                <Route exact path={Pages.Story} component={OurStory} />
+                <Route exact path={Pages.GettingThere} component={GettingThere} />
+                <Route exact path={Pages.Rsvp} component={Rsvp} />
                 <Route render={function () {
                     return <p>Not found</p>
                 }} />
