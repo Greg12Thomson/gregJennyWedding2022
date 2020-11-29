@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Container, Col, Row, Image } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComments } from '@fortawesome/free-regular-svg-icons'
-import FireImage from './fire.jpeg';
+import FireImage from '../images/fire.jpeg';
 
 function Content() {
   return (

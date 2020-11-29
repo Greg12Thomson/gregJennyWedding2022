@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import BackgroudImage from './DSC02015.jpg';
+import BackgroundImage from '../images/DSC02015.jpg';
 
 const style = {
-  backgroundImage: `url(${BackgroudImage})`
+  backgroundImage: `url(${BackgroundImage})`
 }
 
 function Header() {
