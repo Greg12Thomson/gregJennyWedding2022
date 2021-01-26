@@ -21,6 +21,6 @@ You will also see any lint errors in the console.
 
 ### Building
 
-* Run `npm run build`
+* Run `npm install` then `npm run build`
 * Builds the app for production to the `build` folder.
 * It correctly bundles React in production mode and optimizes the build for the best performance.
