@@ -1,8 +1,5 @@
 import React from 'react';
-import { Button, Container, Col, Row, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComments } from '@fortawesome/free-regular-svg-icons'
-import FireImage from '../images/fire.jpeg';
+import { Button, Container, Row } from 'react-bootstrap';
 
 function Content() {
   return (

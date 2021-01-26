@@ -44,7 +44,7 @@ function NavBar() {
                 <Route exact path={Pages.GettingThere} component={GettingThere} />
                 <Route exact path={Pages.Rsvp} component={Rsvp} />
                 <Route render={function () {
-                    return <p>Not found</p>
+                    return <p>404: Page Not found</p>
                 }} />
             </Switch>
         </div>
