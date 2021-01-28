@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {Col, Container, Row, Image} from "react-bootstrap";
-import BackgroundImage from '../images/bw_smile.jpg';
-import BwLaughImage from '../images/bw_laugh.jpg';
-import BwImage from '../images/bw.jpg';
+import InstaxOne from '../images/File_000.png';
+import InstaxTwo from '../images/File_001.png';
+import InstaxThree from '../images/File_002.png';
 
 export function VipHeader() {
   return (
@@ -47,14 +47,14 @@ export function VipContent() {
                 </Col>
                 <Col xs={12} md={6} className="image-1">
                     <Row className="centered">
-                        <Image src={BwLaughImage} thumbnail/>
+                        <Image src={InstaxOne} thumbnail/>
                     </Row>
                 </Col>
             </Row>
             <Row>
                 <Col xs={12} md={6} className="image-2">
                     <Row className="centered">
-                        <Image src={BwImage} thumbnail/>
+                        <Image src={InstaxTwo} thumbnail/>
                     </Row>
                 </Col>
                 <Col xs={12} md={6} className="text-2">
@@ -96,7 +96,7 @@ export function VipContent() {
                 </Col>
                 <Col xs={12} md={6} className="image-3">
                     <Row className="centered">
-                        <Image src={BwLaughImage} thumbnail/>
+                        <Image src={InstaxThree} thumbnail/>
                     </Row>
                 </Col>
             </Row>
