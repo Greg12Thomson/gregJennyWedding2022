@@ -1,9 +1,9 @@
 import React from "react";
 
 import './App.css';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import {VipHeader, VipContent} from './components/Vip';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
         <VipHeader />
         <VipContent />
       </>
-      <Footer />
     </div>
   );
 }
