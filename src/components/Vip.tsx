@@ -25,7 +25,7 @@ export function VipContent() {
       <div className="Vip-Content">
         <Container>
             <h1>
-                Wedding details
+                Weekend Wedding Details
             </h1>
             <hr/>
             <Row>
