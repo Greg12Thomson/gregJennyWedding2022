@@ -15,6 +15,7 @@ code {
 // Grey: #1d2124
 
 .App-header {
+  background-image:  url('images/bw_smile.jpg') !important;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -27,6 +28,24 @@ code {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
+  @media (max-width: 660px) {
+    background-image:  url('images/bw_smile_small.jpg') !important;
+  }
+
+  /* iPad Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-image:  url('images/bw_smile_ipad.jpg') !important;
+  }
+
+  .heading h2 {
+    font-family: Didot;
+  }
+
+  .heading p {
+    font-family: Savoye LET;
+    font-size: 2rem;
+  }
 }
 
 .Vip-header {
