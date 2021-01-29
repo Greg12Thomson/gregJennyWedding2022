@@ -60,12 +60,13 @@ export function VipContent() {
                 <Col xs={12} md={6} className="text-2">
                     <Row className="centered">
                         <p>
-                          To book your room, please call up Cambo House Estate and
-                          say you are booking your room for the Cleeton/Thomson
-                          wedding weekend, the wedding being the 8th of October
-                          2022. Disclaimer, all rooms have to be paid by February
-                          2022, so we have given you a year to save. If you want
-                          though, you can phone right now and book your room.
+                          To book your room, please call up Cambo House Estate,
+                          07552436888 to speak to Kay. Say you are booking your
+                          room for the Cleeton/Thomson wedding weekend, the
+                          wedding being the 8th of October 2022. Disclaimer,
+                          all rooms have to be paid by February 2022, so we
+                          have given you a year to save. If you want though,
+                          you can phone right now and book your room.
                           <br/><br/>
 
                           If you cannot or do not want to take your room, please

@@ -48,18 +48,27 @@ code {
     background-image:  url('images/bw_smile_small.jpg') !important;
   }
 
+  /* iPad Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-image:  url('images/bw_smile_ipad.jpg') !important;
+  }
+
   .heading h2 {
     font-size: 10rem;
     font-family: Didot;
     margin-bottom: -38px;
   }
 
-  // TODO: make smaller for mobile
   .heading p {
-    font-size: 2.7rem;
-    font-family: luxus Brut;
+    font-size: 3.7rem;
+    font-family: P22 Dearest Pro;
     color: white;
     font-weight: bold;
+
+    @media (max-width: 660px) {
+      font-size: 1.4rem;
+    }
+
   }
 }
 
