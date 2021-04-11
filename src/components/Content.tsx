@@ -1,5 +1,7 @@
 import React from 'react';
-import { Button, Container, Row } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Pages } from "./NavBar";
 
 function Content() {
   return (
@@ -13,7 +15,7 @@ function Content() {
           <p>CAMBO ESTATE</p>
         </Row>
         <Row className="centered">
-          <Button className="rsvp" href="#rsvp">RSVP</Button>
+          <Link className="button" to={Pages.Rsvp}>RSVP</Link>
         </Row>
       </Container>
     </div>

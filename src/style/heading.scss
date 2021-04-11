@@ -1,0 +1,31 @@
+@import "parameters";
+
+.heading {
+  .button {
+    padding: 1rem 1.3rem;
+    font-size: 1rem;
+    border: solid 1px white;
+    color: white;
+
+    &:hover {
+      background: $transparent-white !important;
+      color: black !important;
+      text-decoration: none !important;
+    }
+
+    &:visited {
+      color: white;
+    }
+  }
+
+  h2 {
+    font-family: Didot;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: Savoye LET;
+    font-size: 2rem;
+  }
+}

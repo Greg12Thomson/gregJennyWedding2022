@@ -1,0 +1,86 @@
+@import "parameters";
+
+body {
+  margin: 0;
+  font-family: Didot !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+.App-header {
+  background-image:  url('../images/bw_smile.jpg') !important;
+  background-color: $my-darkgrey;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media (max-width: 660px) {
+    background-image:  url('../images/bw_smile_small.jpg') !important;
+  }
+
+  /* iPad Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-image:  url('../images/bw_smile_ipad.jpg') !important;
+  }
+}
+
+.App .btn-primary {
+  border-radius: 0;
+  background: transparent;
+}
+
+
+.content .button {
+  padding: .7rem .5rem;
+  border: solid 1px black;
+  color: black !important;
+}
+
+.content h3 {
+  padding: 30px;
+}
+
+.content .row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.centered {
+  justify-content: center;
+}
+
+.ourStory .col-6 {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.footer {
+  height: auto;
+  width: 100%;
+  position: relative;
+  color: white;
+  background-color: $my-darkgreen;
+  padding-top: 20px;
+
+  p {
+    margin-top: -10px;
+    padding-left: 10px;
+  }
+}
+
+.page-header {
+  padding: 50px;
+}

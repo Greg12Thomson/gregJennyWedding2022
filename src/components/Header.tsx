@@ -1,6 +1,7 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import BackgroundImage from '../images/DSC02015.jpg';
+import {Link} from "react-router-dom";
+import {Pages} from "./NavBar";
 
 const style = {
   backgroundImage: `url(${BackgroundImage})`
@@ -13,10 +14,10 @@ function Header() {
         <h2>
           Jenny & Greg
         </h2>
-        <p>
+        <p className="sub-heading">
           October 8-9, 2022 <span>&#183;</span> Cambo Estate, Scotland
         </p>
-        <Button className="rsvp" href="#rsvp">RSVP</Button>
+        <Link className="button" to={Pages.Rsvp}>RSVP</Link>
       </div>
     </header>
   );

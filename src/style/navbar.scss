@@ -1,0 +1,57 @@
+@import "parameters";
+
+.home-navbar .bg-dark {
+  background: #212529 !important;
+  position: relative;
+}
+
+.home-navbar .navbar {
+  .navbar-text .rsvp {
+    padding: .7rem .5rem;
+    border: solid 1px white;
+
+    &:hover {
+      background: white !important;
+      border-color: black;
+      color: black !important;
+    }
+
+    &:visited {
+      color: white;
+    }
+  }
+}
+
+// Navbar headings
+.home-navbar {
+
+  // Navbar headings
+  .navbar-light .navbar-nav .nav-link {
+    background: transparent;
+    color: white;
+
+    &:hover {
+      text-decoration: underline;
+      color: white;
+    }
+
+    &:focus {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+
+  .navbar-light .navbar-toggler {
+    background: transparent;
+    border-color: rgba(255,255,255,.7);
+    color: white;
+
+    &:hover {
+      background: $transparent-white;
+    }
+
+    &:focus {
+      background: $transparent-white;
+    }
+  }
+}
