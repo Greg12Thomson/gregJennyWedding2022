@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: Didot !important;
+  font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -14,6 +14,7 @@ code {
 
 .App-header {
   background-image:  url('../images/bw_smile.jpg') !important;
+  background-attachment: fixed;
   background-color: $my-darkgrey;
   min-height: 100vh;
   display: flex;
@@ -27,7 +28,7 @@ code {
   -o-background-size: cover;
   background-size: cover;
 
-  @media (max-width: 660px) {
+  @media (max-width: $mobile-max-width) {
     background-image:  url('../images/bw_smile_small.jpg') !important;
   }
 
@@ -43,37 +44,91 @@ code {
 }
 
 
-.content .button {
+.rsvp {
   padding: .7rem .5rem;
   border: solid 1px black;
   color: black !important;
 }
 
-.content h3 {
-  padding: 30px;
-}
+.content {
+  color: $my-darkgreen;
 
-.content .row {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  h3 {
+    padding: 30px;
+  }
+
+  .row {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .rsvp-section {
+    background: $my-darkgreen;
+    width: 100%;
+    color: white;
+
+    .row {
+      margin: 0;
+    }
+    h5 {
+      margin-top: 3rem;
+      margin-bottom: .5rem;
+    }
+
+    .rsvp {
+      margin-bottom: 3rem;
+      border-color: white !important;
+      color: white !important;
+
+      &:hover {
+        background: $my-darkgreen !important;
+        color: white !important;
+      }
+    ;
+    }
+  }
 }
 
 .centered {
   justify-content: center;
 }
 
-.ourStory .col-6 {
+.our-story {
   padding-right: 30px;
   padding-left: 30px;
+
+  .page-header {
+    padding: 3rem 3rem 0 3rem;
+  }
+
+  .img-thumbnail {
+    border: none;
+    border-radius: 10px;
+  }
+
+  p {
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: $mobile-max-width) {
+
+    .her-side {
+      order: 1;
+    }
+    .her-side {
+      order: 2;
+    }
+  }
 }
 
 .footer {
   height: auto;
   width: 100%;
   position: relative;
-  color: white;
-  background-color: $my-darkgreen;
+  color: $my-darkgreen;
+  background-color: white;
   padding-top: 20px;
+  font-size: small;
 
   p {
     margin-top: -10px;
@@ -82,5 +137,38 @@ code {
 }
 
 .page-header {
-  padding: 50px;
+  padding: 3rem;
+  color: $my-darkgreen;
+}
+
+.details {
+  color: $my-darkgreen;
+
+  h5 {
+    padding-bottom: 1rem;
+  }
+
+  p {
+    padding: 0 8rem;
+  }
+
+  .rsvp {
+    padding: .7rem 3.5rem;
+    color: white !important;
+    font-weight: bold;
+    background: $my-darkgreen;
+  }
+
+  .where {
+    border-left: solid 1px $my-darkgreen;
+    margin-bottom: 3rem;
+
+    @media (max-width: $md-breakpoint) {
+      border-left: none;
+    }
+  }
+
+  .register {
+    margin-bottom: 3rem;
+  }
 }

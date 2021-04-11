@@ -1,7 +1,7 @@
 import React from 'react';
 import {Col, Container, Image, Row} from "react-bootstrap";
-import HimImage from "../images/G.png";
-import HerImage from "../images/J.png";
+import HimImage from "../images/File_002.png";
+import HerImage from "../images/File_003.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faComments} from "@fortawesome/free-regular-svg-icons";
 
@@ -12,13 +12,16 @@ function OurStory() {
                 <h1 className="page-header">
                     Our Story
                 </h1>
-                <Row className="ourStory">
-                    <Col xs={6} md={6}>
+                <h4>
+                    We Are Getting Married!
+                </h4>
+                <Row>
+                    <Col className="her-side" xs={12} md={6}>
                         <Image src={HerImage} thumbnail/>
                         <FontAwesomeIcon icon={faComments} size="2x"/>
-                        <h5>
+                        <h4>
                             Her Side
-                        </h5>
+                        </h4>
                         <p>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
@@ -26,12 +29,12 @@ function OurStory() {
                             Donec lacinia congue felis in faucibus..
                         </p>
                     </Col>
-                    <Col xs={6} md={6}>
+                    <Col className="his-side" xs={12} md={6}>
                         <Image src={HimImage} thumbnail/>
                         <FontAwesomeIcon icon={faComments} size="2x"/>
-                        <h5>
+                        <h4>
                             His Side
-                        </h5>
+                        </h4>
                         <p>
                             Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
                             ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,

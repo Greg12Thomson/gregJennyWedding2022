@@ -19,7 +19,13 @@ export enum Pages {
 function NavBar() {
   return (
     <div className="home-navbar">
-        <Navbar fixed="top" bg="dark" expand="sm">
+        <Navbar
+            fixed="top"
+            bg="dark"
+            expand="sm"
+            variant="dark"
+            collapseOnSelect={true}
+        >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -30,7 +36,7 @@ function NavBar() {
             </Nav>
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
-                <Nav.Link className="rsvp" as={Link} to={Pages.Rsvp}>RSVP</Nav.Link>
+                <Nav.Link className="rsvp-button" as={Link} to={Pages.Rsvp}>RSVP</Nav.Link>
               </Navbar.Text>
             </Navbar.Collapse>
           </Navbar.Collapse>

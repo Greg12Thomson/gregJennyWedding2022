@@ -3,8 +3,9 @@
 .heading {
   .button {
     padding: 1rem 1.3rem;
-    font-size: 1rem;
-    border: solid 1px white;
+    font-size: 1.5rem;
+    border: solid 2px white;
+    font-weight: bold;
     color: white;
 
     &:hover {
@@ -19,13 +20,18 @@
   }
 
   h2 {
-    font-family: Didot;
-    font-size: 3rem;
+    font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+    font-size: 6rem;
     font-weight: 700;
+
+    @media (max-width: $mobile-max-width) {
+      font-size: 3rem;
+    }
   }
 
   p {
-    font-family: Savoye LET;
+    font-family: Savoye LET, sans-serif;;
     font-size: 2rem;
+    font-weight: bold
   }
 }
