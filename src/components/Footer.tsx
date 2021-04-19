@@ -6,13 +6,17 @@ function Footer() {
     <div className="footer">
       <Container>
         <Row className="centered">
-          <p>
-            Save the Date! October 8, 2022
-          </p>
+          {/*TODO: create hashtag*/}
+          <h5>
+            #GregAndJenny
+          </h5>
+          {/*<p>*/}
+          {/*  Contact us at gregandjennywed@googlemail.com*/}
+          {/*</p>*/}
         </Row>
         <Row className="centered">
           <p>
-            Contact us at gregandjennywed@googlemail.com
+            © 2022 By Greg & Jenny. Created by Greg (it is my job after all)
           </p>
         </Row>
       </Container>

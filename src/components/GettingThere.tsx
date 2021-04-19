@@ -6,6 +6,18 @@ function GettingThere() {
       <h1 className="page-header">
           GettingThere
       </h1>
+        <h4>
+            Transportation
+        </h4>
+        <p>
+            I'm a paragraph. Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+        </p>
+        <h4>
+            Accommodation
+        </h4>
+        <p>
+            I'm a paragraph. Blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah.
+        </p>
     </div>
   );
 }

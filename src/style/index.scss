@@ -57,11 +57,6 @@ code {
     padding: 30px;
   }
 
-  .row {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
   .rsvp-section {
     background: $my-darkgreen;
     width: 100%;
@@ -76,6 +71,7 @@ code {
     }
 
     .rsvp {
+      padding: .7rem 3.5rem;
       margin-bottom: 3rem;
       border-color: white !important;
       color: white !important;
@@ -84,7 +80,6 @@ code {
         background: $my-darkgreen !important;
         color: white !important;
       }
-    ;
     }
   }
 }
@@ -132,7 +127,6 @@ code {
 
   p {
     margin-top: -10px;
-    padding-left: 10px;
   }
 }
 
@@ -142,7 +136,12 @@ code {
 }
 
 .details {
-  color: $my-darkgreen;
+  background-color: $my-darkgreen;
+  color: white;
+
+  h1 {
+    color: white;
+  }
 
   h5 {
     padding-bottom: 1rem;
@@ -154,13 +153,18 @@ code {
 
   .rsvp {
     padding: .7rem 3.5rem;
+    margin-bottom: 3rem;
+    border-color: white !important;
     color: white !important;
-    font-weight: bold;
-    background: $my-darkgreen;
+
+    &:hover {
+      background: $my-darkgreen !important;
+      color: white !important;
+    }
   }
 
   .where {
-    border-left: solid 1px $my-darkgreen;
+    border-left: solid 1px white;
     margin-bottom: 3rem;
 
     @media (max-width: $md-breakpoint) {
