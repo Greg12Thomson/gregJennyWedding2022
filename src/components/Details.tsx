@@ -19,7 +19,7 @@ function Details() {
                         </Row>
                         <Row className="centered">
                             <p>
-                                October 8, 2022, 1:00 PM
+                                Saturday 8th October, 2022, 1:00 PM
                             </p>
                         </Row>
                     </Col>

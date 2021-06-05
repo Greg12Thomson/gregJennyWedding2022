@@ -12,10 +12,10 @@ function Header() {
     <header className="App-header" style={ style }>
       <div className="heading">
         <h2>
-          Jenny & Greg
+          Jennifer & Gregor
         </h2>
         <p className="sub-heading">
-          October 8-9, 2022 <span>&#183;</span> Cambo Estate, Scotland
+          Saturday 8th October, 2022 <span>&#183;</span> Cambo Estate, Scotland
         </p>
         <Link className="button" to={Pages.Rsvp}>RSVP</Link>
       </div>

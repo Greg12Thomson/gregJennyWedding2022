@@ -23,10 +23,11 @@ function OurStory() {
                             Her Side
                         </h4>
                         <p>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                            ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                            tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                            Donec lacinia congue felis in faucibus..
+                            I moved to Perth High School when I was 14 years old with romanticised ideas of getting the
+                            school bus, soon to realise it wasn’t that glamorous and I spent more time than I thought
+                            chasing the damn thing along the road. Then I saw a boy who got on the other bus and next
+                            thing you know we are getting married. I say next thing, I mean 14 years after meeting and
+                            12 years after dating. So I guess the village buses do hold a bit of a romanticism.
                         </p>
                     </Col>
                     <Col className="his-side" xs={12} md={6}>
@@ -36,10 +37,7 @@ function OurStory() {
                             His Side
                         </h4>
                         <p>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                            ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                            tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                            Donec lacinia congue felis in faucibus.
+                            TODO
                         </p>
                     </Col>
                 </Row>
