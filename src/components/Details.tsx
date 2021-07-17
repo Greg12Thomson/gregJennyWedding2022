@@ -14,24 +14,24 @@ function Details() {
                     <Col className="when" xs={12} md={6}>
                         <Row className="centered">
                             <h5>
-                                When
+                                When?
                             </h5>
                         </Row>
                         <Row className="centered">
                             <p>
-                                Saturday 8th October, 2022, 1:00 PM
+                                Saturday 8th October, 2022, 2PM
                             </p>
                         </Row>
                     </Col>
                     <Col className="where" xs={12} md={6} >
                         <Row className="centered">
                             <h5>
-                                Where
+                                Where?
                             </h5>
                         </Row>
                         <Row className="centered">
                             <p>
-                                Cambo House, Kingsbarns, St Andrews KY16 8QD
+                                Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
                             </p>
                         </Row>
                     </Col>

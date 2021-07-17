@@ -2,14 +2,13 @@
 
 body {
   margin: 0;
-  font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif !important;
+  font-family: $default-font-family !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+  font-family: $code-font-family, monospace;
 }
 
 .App-header {
@@ -51,14 +50,14 @@ code {
 }
 
 .content {
-  color: $my-darkgreen;
+  color: $my-darkgreen2;
 
   h3 {
     padding: 30px;
   }
 
   .rsvp-section {
-    background: $my-darkgreen;
+    background: $my-darkgreen2;
     width: 100%;
     color: white;
 
@@ -77,7 +76,7 @@ code {
       color: white !important;
 
       &:hover {
-        background: $my-darkgreen !important;
+        background: $my-darkgreen2-hover !important;
         color: white !important;
       }
     }
@@ -120,7 +119,7 @@ code {
   height: auto;
   width: 100%;
   position: relative;
-  color: $my-darkgreen;
+  color: $my-darkgreen2;
   background-color: white;
   padding-top: 20px;
   font-size: small;
@@ -132,11 +131,11 @@ code {
 
 .page-header {
   padding: 3rem;
-  color: $my-darkgreen;
+  color: $my-darkgreen2;
 }
 
 .details {
-  background-color: $my-darkgreen;
+  background-color: $my-darkgreen2;
   color: white;
 
   h1 {
@@ -158,7 +157,7 @@ code {
     color: white !important;
 
     &:hover {
-      background: $my-darkgreen !important;
+      background: $my-darkgreen2-hover !important;
       color: white !important;
     }
   }

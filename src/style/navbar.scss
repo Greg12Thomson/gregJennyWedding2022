@@ -11,9 +11,7 @@
     border: solid 1px white;
 
     &:hover {
-      background: white !important;
-      border-color: black;
-      color: black !important;
+      background: #484b4e !important;
       text-decoration: underline;
     }
 
@@ -29,5 +27,6 @@
 
   &:focus, &:hover {
     color: white;
+    text-decoration: underline;
   }
 }

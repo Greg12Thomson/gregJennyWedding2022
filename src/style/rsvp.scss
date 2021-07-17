@@ -1,0 +1,78 @@
+@import "parameters";
+
+.rsvp-page {
+  margin-top: 4rem;
+
+  @media (max-width: $mobile-max-width) {
+    margin-top: 3rem;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .button {
+    padding: .7rem .5rem;
+    background-color: $my-darkgreen2;
+    color: #f8f9fa !important;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      background: $my-darkgreen2-hover !important;
+    }
+  }
+
+  .page-header {
+    padding: 0 0 1.5rem 0;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .form-container {
+    @media (max-width: $mobile-max-width) {
+      order: 2
+    }
+  }
+
+  .wedding-detail-container {
+    @media (max-width: $mobile-max-width) {
+      order: 1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .wedding-details-box {
+    font-family: $default-font-family;
+    text-align: left;
+    background-color: $my-darkgreen2;
+    color: white;
+    padding: 1rem;
+    hr {
+      border-color: white;
+    }
+
+    @media (max-width: $mobile-max-width) {
+      order: 1;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+    label {
+      display: flex;
+    }
+  }
+
+  .form-check {
+    margin-bottom: 2rem;
+    display: flex;
+  }
+
+  form {
+    margin-bottom: 2rem;
+    .form-control {
+      border-radius: 0;
+    }
+  }
+}

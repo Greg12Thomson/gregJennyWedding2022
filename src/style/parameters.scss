@@ -1,5 +1,8 @@
 // Colours:
 $my-darkgreen: #062f0f;
+// TODO: decide on green and colour pallet. Other green
+$my-darkgreen2: rgb(22, 62, 58);
+$my-darkgreen2-hover: #20524d;
 $my-grey: #1d2124;
 //$my-darkgrey: #282c34;
 $my-darkgrey: #163e3a;
@@ -9,3 +12,9 @@ $my-off-white: #dae0e5;
 // sizes
 $mobile-max-width: 660px;
 $md-breakpoint: 768px;
+
+
+// Fonts
+$default-font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+$code-font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
+$medium-heading-font-family: Savoye LET, sans-serif;

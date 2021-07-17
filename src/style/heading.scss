@@ -10,7 +10,6 @@
 
     &:hover {
       background: $transparent-white !important;
-      color: black !important;
       text-decoration: underline !important;
     }
 
@@ -20,7 +19,7 @@
   }
 
   h2 {
-    font-family: Didot, Didot LT STD, Hoefler Text, Garamond, Times New Roman, serif;
+    font-family: $default-font-family;
     font-size: 6rem;
     font-weight: 700;
 
@@ -30,7 +29,7 @@
   }
 
   p {
-    font-family: Savoye LET, sans-serif;;
+    font-family: $medium-heading-font-family;
     font-size: 2rem;
     font-weight: bold
   }

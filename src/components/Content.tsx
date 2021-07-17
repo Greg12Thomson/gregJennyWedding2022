@@ -15,7 +15,7 @@ function Content() {
                     </h3>
                 </Row>
                 <Row className="centered">
-                    <p>CAMBO ESTATE</p>
+                    <p>Cambo Estate</p>
                 </Row>
                 <Row className="centered">
                     <p>Kingsbarns, St Andrews, Fife KY16 8QD</p>
