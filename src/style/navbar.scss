@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.navbar-dark .navbar-toggler {
+  border-color: white !important;
+}
+
 .home-navbar .navbar {
   .navbar-text .rsvp-button {
     padding: .7rem .5rem;

@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import {Col, Container, Form, Row} from "react-bootstrap";
 
 function Rsvp() {
-    const e: string[] = []
+    const initialErrors: string[] = []
     const [plusOne, setPlusOne] = useState(false);
-    const [errors, setErrors] = useState(e);
+    const [errors, setErrors] = useState(initialErrors);
     const [firstName, setFirstname] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -34,8 +34,6 @@ function Rsvp() {
             setErrors(newErrors);
         }
     }
-
-    console.log(errors);
 
 
     return (
@@ -138,7 +136,7 @@ function Rsvp() {
                     </Col>
                     <Col xs={12} md={4} className="wedding-detail-container">
                         <div className="wedding-details-box">
-                            <h4>GREGOR & JENNIFER</h4>
+                            <h4>JENNIFER & GREGOR</h4>
                             <hr/>
                             October 8, 2022, 2PM |<br/>
                             Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD

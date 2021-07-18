@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
-import { Navbar, Nav } from 'react-bootstrap';
+import {Navbar, Nav, NavbarBrand} from 'react-bootstrap';
 
 import Home from './Home';
 import Details from './Details';
@@ -26,6 +26,7 @@ function NavBar() {
             variant="dark"
             collapseOnSelect={true}
         >
+          <NavbarBrand className="navbar-brand">Jennifer & Gregor</NavbarBrand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">

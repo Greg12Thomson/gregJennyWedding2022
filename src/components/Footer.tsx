@@ -8,15 +8,17 @@ function Footer() {
         <Row className="centered">
           {/*TODO: create hashtag*/}
           <h5>
-            #GregAndJenny
+            #GregAndJennyWed
           </h5>
-          {/*<p>*/}
-          {/*  Contact us at gregandjennywed@googlemail.com*/}
-          {/*</p>*/}
         </Row>
         <Row className="centered">
           <p>
-            © 2022 By Greg & Jenny. Created by Greg (it is my job after all)
+            Contact us at gregandjennywed@googlemail.com
+          </p>
+        </Row>
+        <Row className="centered">
+          <p>
+            © 2022 By Jenny & Greg. Created by Greg (it is my job after all)
           </p>
         </Row>
       </Container>

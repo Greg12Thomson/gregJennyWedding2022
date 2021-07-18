@@ -4,24 +4,17 @@ import { Link } from "react-router-dom";
 import { Pages } from "./NavBar";
 import OurStory from "./OurStory";
 import Details from "./Details";
+import GettingThere from "./GettingThere";
 
 function Content() {
     return (
         <div className="content">
-            <Container>
-                <Row className="centered">
-                    <h3>
-                        Please join Greg and Jenny on October 8-9, 2022 as we celebrate our wedding in Scotland
-                    </h3>
-                </Row>
-                <Row className="centered">
-                    <p>Cambo Estate</p>
-                </Row>
-                <Row className="centered">
-                    <p>Kingsbarns, St Andrews, Fife KY16 8QD</p>
-                </Row>
-            </Container>
             <div className="centered rsvp-section">
+                <Row className="centered">
+                    <h4>
+                        Please join Greg and Jenny on October 8th - 9th, 2022 as we celebrate our wedding in Scotland
+                    </h4>
+                </Row>
                 <Row className="centered">
                     <h5>
                         We're so excited to celebrate with you!
@@ -33,6 +26,7 @@ function Content() {
             </div>
             <OurStory />
             <Details />
+            <GettingThere />
         </div>
     );
 }
