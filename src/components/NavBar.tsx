@@ -7,13 +7,15 @@ import Details from './Details';
 import OurStory from './OurStory';
 import GettingThere from './GettingThere';
 import Rsvp from './Rsvp';
+import Confirmation from "./Confirmation";
 
 export enum Pages {
   Home = "/",
   Details = "/details",
   Story = "/story",
   GettingThere = "/getting-there",
-  Rsvp = "/rsvp"
+  Rsvp = "/rsvp",
+  Confirm = "/confirmation"
 }
 
 function NavBar() {
@@ -49,6 +51,7 @@ function NavBar() {
                 <Route exact path={Pages.Story} component={OurStory} />
                 <Route exact path={Pages.GettingThere} component={GettingThere} />
                 <Route exact path={Pages.Rsvp} component={Rsvp} />
+                <Route exact path={Pages.Confirm} component={Confirmation} />
                 <Route render={function () {
                     return <p>404: Page Not found</p>
                 }} />

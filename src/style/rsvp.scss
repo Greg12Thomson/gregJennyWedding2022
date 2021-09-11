@@ -65,7 +65,7 @@
   }
 
   .form-check {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     display: flex;
   }
 
@@ -73,6 +73,17 @@
     margin-bottom: 2rem;
     .form-control {
       border-radius: 0;
+    }
+  }
+
+  .img-thumbnail {
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    padding-bottom: 2rem;
+    @media (max-width: $mobile-max-width) {
+      width: 100%;
+      padding-bottom: 3rem;
     }
   }
 }

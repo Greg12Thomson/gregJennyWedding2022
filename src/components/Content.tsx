@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { Pages } from "./NavBar";
 import OurStory from "./OurStory";
