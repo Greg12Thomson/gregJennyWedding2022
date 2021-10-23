@@ -1,0 +1,32 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify1564722dd37f4-staging-113131-authRole",
+      "UnauthRoleArn": "arn:aws:iam::110992015592:role/amplify-amplify1564722dd37f4-staging-113131-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::110992015592:role/amplify-amplify1564722dd37f4-staging-113131-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-amplify1564722dd37f4-staging-113131-deployment",
+      "UnauthRoleName": "amplify-amplify1564722dd37f4-staging-113131-unauthRole",
+      "StackName": "amplify-amplify1564722dd37f4-staging-113131",
+      "StackId": "arn:aws:cloudformation:eu-west-1:110992015592:stack/amplify-amplify1564722dd37f4-staging-113131/8acfbcb0-e23b-11eb-b822-028def2227ad",
+      "AmplifyAppId": "dk5onkrn9hdcp"
+    },
+    "categories": {
+      "storage": {
+        "rsvptable": {
+          "tableName": "rsvp-table",
+          "region": "eu-west-1",
+          "arn": "arn:aws:dynamodb:eu-west-1:110992015592:table/rsvp-table",
+          "partitionKeyName": "email",
+          "partitionKeyType": "S"
+        }
+      },
+      "function": {
+        "rsvpLambda": {
+          "deploymentBucketName": "amplify-amplify1564722dd37f4-staging-113131-deployment",
+          "s3Key": "amplify-builds/rsvpLambda-34477664356573426a77-build.zip"
+        }
+      }
+    }
+  }
+}

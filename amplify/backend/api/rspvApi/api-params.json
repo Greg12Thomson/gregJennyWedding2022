@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/rsvp",
+      "lambdaFunction": "rsvpLambda",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/rsvp"
+    }
+  ],
+  "resourceName": "rspvApi",
+  "apiName": "rspvApi",
+  "functionArns": [
+    {
+      "lambdaFunction": "rsvpLambda"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-amplify1564722dd37f4-staging-113131-authRole",
+    "unAuthRoleName": "amplify-amplify1564722dd37f4-staging-113131-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "rsvpLambda",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
