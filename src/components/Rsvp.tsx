@@ -95,19 +95,43 @@ function Rsvp() {
 
 
     return (
+        <>
+        <div className="app-header">
+            <div className="heading">
+                <h1 className="title">
+                    Jennifer & Gregor
+                </h1>
+                <h5>
+                    08.10.2022
+                </h5>
+            </div>
+        </div>
         <div className="rsvp-page">
-            <Container>
+
+            <Container className="content">
                 <Row>
                     <Col xs={12} md={12} className="form-container">
-                        <h1>
-                            RSVP
+                        <h1 className="title">
+                            Yes, I'll be there
                         </h1>
-                        <h5>
-                            for the wedding of
-                        </h5>
-                        <h2>
-                            Jennifer & Gregor
-                        </h2>
+                        <p className="description">
+                            Please let us know your plans by September 1, 2022. We can't wait to celebrate with you all!
+                        </p>
+                        <Col xs={12} md={12} className="wedding-detail-container">
+                            <div className="wedding-details-box">
+                                <h4>Details</h4>
+                                <b>Date: </b>
+                                October 8, 2022, 2PM <br/>
+                                <b>Address: </b>
+                                Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
+                                Saturday, October 8, 2022 <br/>
+                                <hr/>
+                                <h4>Ceremony & Reception</h4>
+                                <b>Ceremony:</b> 1pm <br/>
+                                <b>Evening Guests:</b> 7pm <br/>
+                                <hr/>
+                            </div>
+                        </Col>
                         <Form>
                             <NameInput
                                 lastName={lastName}
@@ -178,25 +202,10 @@ function Rsvp() {
                             : null}
                         </Form>
                     </Col>
-                    {/* TODO: improve for Mobile! */}
-                    <Col xs={12} md={4} className="wedding-detail-container">
-                        <div className="wedding-details-box">
-                            <h4>JENNIFER & GREGOR</h4>
-                            <hr/>
-                            October 8, 2022, 2PM <br/>
-                            Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
-                            Saturday, October 8, 2022 <br/>
-                            <hr/>
-                            <h4>Ceremony & Reception</h4>
-                            Ceremony: 1pm <br/>
-                            Evening Guests: 7pm <br/>
-                            <hr/>
-                        </div>
-                    </Col>
                 </Row>
             </Container>
-            
         </div>
+    </>
     );
 }
 

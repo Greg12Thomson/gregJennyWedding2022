@@ -1,12 +1,51 @@
 @import "parameters";
 
+.app-header {
+  background-image:  url('../images/bw_smile.jpg') !important;
+  background-attachment: fixed;
+  background-color: $my-darkgrey;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media (max-width: $mobile-max-width) {
+    background-image:  url('../images/bw_smile_small.jpg') !important;
+  }
+
+  /* iPad Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-image:  url('../images/bw_smile_ipad.jpg') !important;
+  }
+
+  .h1 {
+    font-size: 4rem
+  }
+}
+
 .rsvp-page {
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-right: 10%;
   padding-left: 10%;
   @media (max-width: $mobile-max-width) {
     padding-right: 0;
     padding-left: 0;
+  }
+
+  .title {
+    padding-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  .description {
+    margin-bottom: 2rem;
   }
 
   .errorMessage {
@@ -91,7 +130,7 @@
     border: none;
     border-radius: 10px;
     width: 50%;
-    padding-bottom: 2rem;
+    padding-bottom: 5.5rem;
     @media (max-width: $mobile-max-width) {
       width: 100%;
       padding-bottom: 3rem;
