@@ -30,24 +30,14 @@ interface PutDataProps {
     lastName: string;
     email: string;
     attending: boolean;
-    song: String;
-    plusOne: boolean;
+    song?: String;
+    plusOne?: boolean;
     firstNamePlusOne?: String;
     lastNamePlusOne?: String;
 }
 
-export const postData = (body: PutDataProps) => {
+export const postData = async (body: PutDataProps) => {
     const payload = {...myInit, body};
-    API
-        .post(apiName, path, payload)
-        .then(response => {
-            console.log(response);
-            return response;
-        })
-        .catch(error => {
-            console.error("Failed to put data from DB: " + error);
-            return error;
-        });
+
+    return await API.post(apiName, path, payload);
 }
-
-

@@ -2,6 +2,16 @@
 
 .rsvp-page {
   margin-top: 4rem;
+  padding-right: 10%;
+  padding-left: 10%;
+  @media (max-width: $mobile-max-width) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .errorMessage {
+    padding-top: 1rem;
+  }
 
   @media (max-width: $mobile-max-width) {
     margin-top: 3rem;
@@ -47,6 +57,7 @@
     background-color: $my-darkgreen2;
     color: white;
     padding: 1rem;
+    margin-bottom: 2rem;
     hr {
       border-color: white;
     }

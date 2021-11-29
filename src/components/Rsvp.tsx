@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {Col, Container, Form, Row} from "react-bootstrap";
 import {Pages} from "./NavBar";
+import { postData } from "../client/aws-client";
 
 function Rsvp() {
     const history = useHistory();
@@ -15,8 +16,10 @@ function Rsvp() {
     const [attending, setAttending] = useState(undefined);
     const [firstNamePlusOne, setFirstNamePlusOne] = useState("");
     const [lastNamePlusOne, setLastNamePlusOne] = useState("");
+    const [showErrorModal, setErrorModal] = useState(false);
 
-    const handleSubmit = (event: any, history: any) => {
+
+    const handleSubmit = async (event: any, history: any) => {
         if (event) {
             const newErrors = [];
             if (firstName === "") {
@@ -47,7 +50,43 @@ function Rsvp() {
             }
 
             if (newErrors.length === 0) {
-                history.push(Pages.Confirm);
+                // No errors, add RSVP
+                let postDataBody;
+
+                if (attending) {
+                    postDataBody = {
+                        firstName,
+                        lastName,
+                        attending: true,
+                        email: email || `${firstName}${lastName}`,
+                        plusOne,
+                        lastNamePlusOne,
+                        firstNamePlusOne,
+                        song
+                    }
+                } else {
+                    postDataBody = {
+                        firstName,
+                        lastName,
+                        attending: false,
+                        email: email || `${firstName}${lastName}`,
+                    }
+                } 
+
+                // Add to DDB
+                try {
+                    const response = await postData(postDataBody);
+
+                    if (response && response.success) {
+                        history.push(Pages.Confirm);
+                    } else {
+                        console.log("Failed, but no exception");
+                        setErrorModal(true);
+                    }
+                } catch (error) {
+                    console.log("Oops! That's embarrassing");
+                    setErrorModal(true);
+                }
             } else {
                 setErrors(newErrors);
             }
@@ -59,10 +98,16 @@ function Rsvp() {
         <div className="rsvp-page">
             <Container>
                 <Row>
-                    <Col xs={12} md={8} className="form-container">
-                        <h1 className="page-header">
-                            Yes, I'll Be There
+                    <Col xs={12} md={12} className="form-container">
+                        <h1>
+                            RSVP
                         </h1>
+                        <h5>
+                            for the wedding of
+                        </h5>
+                        <h2>
+                            Jennifer & Gregor
+                        </h2>
                         <Form>
                             <NameInput
                                 lastName={lastName}
@@ -125,18 +170,32 @@ function Rsvp() {
                             <div className="button" onClick={(event) => handleSubmit(event, history)}>
                                 Submit
                             </div>
+                            { showErrorModal ?
+                                <div className="errorMessage">
+                                    <h5>Oops! That's embarrassing</h5>
+                                    <p>Sorry, it doesn't seem to be working. Try retrying and if that doesn't work, contact Greg or Jenny.</p>
+                                </div>
+                            : null}
                         </Form>
                     </Col>
+                    {/* TODO: improve for Mobile! */}
                     <Col xs={12} md={4} className="wedding-detail-container">
                         <div className="wedding-details-box">
                             <h4>JENNIFER & GREGOR</h4>
                             <hr/>
-                            October 8, 2022, 2PM |<br/>
+                            October 8, 2022, 2PM <br/>
                             Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
+                            Saturday, October 8, 2022 <br/>
+                            <hr/>
+                            <h4>Ceremony & Reception</h4>
+                            Ceremony: 1pm <br/>
+                            Evening Guests: 7pm <br/>
+                            <hr/>
                         </div>
                     </Col>
                 </Row>
             </Container>
+            
         </div>
     );
 }
