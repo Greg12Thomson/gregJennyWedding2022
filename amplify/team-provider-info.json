@@ -24,7 +24,7 @@
       "function": {
         "rsvpLambda": {
           "deploymentBucketName": "amplify-amplify1564722dd37f4-staging-113131-deployment",
-          "s3Key": "amplify-builds/rsvpLambda-34477664356573426a77-build.zip"
+          "s3Key": "amplify-builds/rsvpLambda-357770544d6f6c377463-build.zip"
         }
       }
     }

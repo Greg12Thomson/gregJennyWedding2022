@@ -9,22 +9,20 @@ See the License for the specific language governing permissions and limitations 
 
 
 const AWS = require('aws-sdk')
+const { v4: uuidv4 } = require('uuid');
+
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 var express = require('express')
 
 AWS.config.update({ region: process.env.TABLE_REGION });
 
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-let tableName = "";
-if(process.env.ENV && process.env.ENV !== "NONE") {
-  tableName = tableName + '-' + process.env.ENV;
-}
-
-const userIdPresent = false; // TODO: update in case is required to use that definition
-const partitionKeyName = "";
-const partitionKeyType = "";
+const tableName = "rsvp-table";
+const userIdPresent = false;
+const partitionKeyName = "email";
+const partitionKeyType = "S";
 const sortKeyName = "";
 const sortKeyType = "";
 const hasSortKey = sortKeyName !== "";
@@ -135,25 +133,53 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
   });
 });
 
+/*****************************************
+ * HTTP Get method for get all objects *
+ *****************************************/
+
+ app.get(path, function (req, res) {
+  console.log("Get all RSVPs");
+
+  var params = {
+    TableName: tableName,
+    Select: 'ALL_ATTRIBUTES',
+  };
+
+  dynamodb.scan(params, (err, data) => {
+    if (err) {
+      res.statusCode = 500;
+      res.json({ error: 'Could not load items: ' + err.message });
+    } else {
+      if (data.Item) {
+        res.json(data.Item);
+      } else {
+        res.json(data) ;
+      }
+    }
+  });
+});
 
 /************************************
 * HTTP put method for insert object *
 *************************************/
 
 app.put(path, function(req, res) {
+  console.log("Adding RSVP with body: ", req.body);
+
+  const { body } = req;
 
   if (userIdPresent) {
-    req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
+    body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: body
   }
   dynamodb.put(putItemParams, (err, data) => {
     if(err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url, body: req.body});
+      res.json({error: err, url: req.url, body: body});
     } else{
       res.json({success: 'put call succeed!', url: req.url, data: data})
     }
@@ -165,18 +191,26 @@ app.put(path, function(req, res) {
 *************************************/
 
 app.post(path, function(req, res) {
+  console.log("Adding RSVP with body: ", req.body);
 
+  const timestamp = new Date().toISOString();
   if (userIdPresent) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
 
   let putItemParams = {
     TableName: tableName,
-    Item: req.body
+    Item: {
+      ...req.body,
+      id: uuidv4(),
+      createdAt: timestamp,
+      updatedAt: timestamp
+    }
   }
   dynamodb.put(putItemParams, (err, data) => {
     if(err) {
       res.statusCode = 500;
+      console.log("Failed to add RSVP: ", {error: err, url: req.url, body: req.body})
       res.json({error: err, url: req.url, body: req.body});
     } else{
       res.json({success: 'post call succeed!', url: req.url, data: data})
@@ -223,6 +257,7 @@ app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     }
   });
 });
+
 app.listen(3000, function() {
     console.log("App started")
 });
