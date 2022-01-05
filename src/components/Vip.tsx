@@ -62,7 +62,7 @@ export function VipContent() {
                         <p>
                           To book your room, please contact either Jenny or Greg
                           before the end of March 2021. And to pay please call
-                          up Cambo House Estate, 07552436888 to speak to Kay,
+                          up Cambo House Estate, 01333450054 to speak to Kay,
                           and say it is for the Cleeton/Thomson wedding
                           weekend, the wedding being the 8th of October 2022.
                           Disclaimer, all rooms{" "}
