@@ -1,10 +1,8 @@
 import React from 'react';
 import {Col, Container, Image, Row} from "react-bootstrap";
-import HimImage from "../images/File_002.png";
 import HerImage from "../images/File_003.png";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faComments} from "@fortawesome/free-regular-svg-icons";
 
+// TODO: fix styling 
 function OurStory() {
     return (
         <div className="our-story">
@@ -18,26 +16,17 @@ function OurStory() {
                 <Row>
                     <Col className="her-side" xs={12} md={6}>
                         <Image src={HerImage} thumbnail/>
-                        <FontAwesomeIcon icon={faComments} size="2x"/>
-                        <h4>
-                            Her Side
-                        </h4>
-                        <p>
-                            I moved to Perth High School when I was 14 years old with romanticised ideas of getting the
-                            school bus, soon to realise it wasn’t that glamorous and I spent more time than I thought
-                            chasing the damn thing along the road. Then I saw a boy who got on the other bus and next
-                            thing you know we are getting married. I say next thing, I mean 14 years after meeting and
-                            12 years after dating. So I guess the village buses do hold a bit of a romanticism.
-                        </p>
                     </Col>
                     <Col className="his-side" xs={12} md={6}>
-                        <Image src={HimImage} thumbnail/>
-                        <FontAwesomeIcon icon={faComments} size="2x"/>
-                        <h4>
-                            His Side
-                        </h4>
                         <p>
-                            TODO
+                            Greg and Jenny met when they were in third year at high school, but it wasn’t
+                            until after a summer of secret walks, side glances at parties and two years that
+                            Greg plucked up the courage to ask her out across MSN. <br/>
+                            They have travelled all over the world, both together and independently, and have
+                            amassed a total of 37 living and thriving house plants. <br/>
+                            On the day you join them to celebrate their marriage at Cambo Estate, they will
+                            have been together for a total of 12 years. <br/>
+                            They cannot wait to share their day of love, food, dancing and drinks with you.
                         </p>
                     </Col>
                 </Row>

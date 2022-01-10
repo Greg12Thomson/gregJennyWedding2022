@@ -98,26 +98,24 @@ code {
   color: $my-darkgreen2;
 
   .page-header {
-    padding: 3rem 3rem 0 3rem;
+    padding: 2rem 3rem 0 3rem;
   }
 
   .img-thumbnail {
     border: none;
     border-radius: 10px;
+    padding: 1rem 3rem 1rem 3rem;
   }
 
   p {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
   }
 
-  @media (max-width: $mobile-max-width) {
-
-    .her-side {
-      order: 1;
-    }
-    .her-side {
-      order: 2;
-    }
+  .his-side {
+    display: grid;
+    align-items: center;
+    justify-items: center;
   }
 }
 
@@ -127,7 +125,7 @@ code {
   position: relative;
   color: white;
   background-color: $my-darkgreen2;
-  padding-top: 20px;
+  padding-top: 1rem;
   font-size: small;
 
   p {
@@ -172,13 +170,30 @@ code {
   .where {
     border-left: solid 1px white;
     margin-bottom: 3rem;
-
-    @media (max-width: $md-breakpoint) {
-      border-left: none;
-    }
   }
 
   .register {
     margin-bottom: 3rem;
+  }
+}
+
+.getting-there {
+
+  h5 {
+    font-weight: 600;
+  }
+
+  h6 {
+    font-weight: 600;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .img-thumbnail {
+    margin-bottom: 2rem;
   }
 }

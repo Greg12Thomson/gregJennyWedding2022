@@ -1,7 +1,5 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import { Link } from "react-router-dom";
-import { Pages } from "./NavBar";
 import OurStory from "./OurStory";
 import Details from "./Details";
 import GettingThere from "./GettingThere";
@@ -12,16 +10,12 @@ function Content() {
             <div className="centered rsvp-section">
                 <Row className="centered">
                     <h4>
-                        Please join Greg and Jenny on October 8th - 9th, 2022 as we celebrate our wedding in Scotland
+                        Please join Greg and Jenny at Cambo Estate for a big auld Scottish wedding.
                     </h4>
                 </Row>
                 <Row className="centered">
                     <h5>
-                        We're so excited to celebrate with you!
                     </h5>
-                </Row>
-                <Row className="centered">
-                    <Link className="rsvp" to={Pages.Rsvp}>RSVP</Link>
                 </Row>
             </div>
             <OurStory />

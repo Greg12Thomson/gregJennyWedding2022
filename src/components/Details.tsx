@@ -1,7 +1,5 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import {Pages} from "./NavBar";
 
 function Details() {
     return (
@@ -11,7 +9,7 @@ function Details() {
                     Wedding Details
                 </h1>
                 <Row>
-                    <Col className="when" xs={12} md={6}>
+                    <Col className="when" xs={6} md={6}>
                         <Row className="centered">
                             <h5>
                                 When?
@@ -23,7 +21,7 @@ function Details() {
                             </p>
                         </Row>
                     </Col>
-                    <Col className="where" xs={12} md={6} >
+                    <Col className="where" xs={6} md={6} >
                         <Row className="centered">
                             <h5>
                                 Where?
@@ -35,14 +33,6 @@ function Details() {
                             </p>
                         </Row>
                     </Col>
-                </Row>
-                <Row className="centered register">
-                    <Link className="rsvp" to={Pages.Rsvp}>RSVP</Link>
-                </Row>
-                <Row className="centered">
-                    <p>
-                        Map!
-                    </p>
                 </Row>
             </Container>
         </div>

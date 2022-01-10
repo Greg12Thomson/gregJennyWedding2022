@@ -33,11 +33,6 @@ function Home() {
               <Nav.Link as={Link} to={Pages.Story}>Our Story</Nav.Link>
               <Nav.Link as={Link} to={Pages.GettingThere}>Getting There</Nav.Link>
             </Nav>
-            <Navbar.Collapse className="justify-content-end">
-              <Navbar.Text>
-                <Nav.Link className="rsvp-button" as={Link} to={Pages.Rsvp}>RSVP</Nav.Link>
-              </Navbar.Text>
-            </Navbar.Collapse>
           </Navbar.Collapse>
         </Navbar>
       <Header />
