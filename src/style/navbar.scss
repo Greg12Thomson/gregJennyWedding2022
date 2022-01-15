@@ -1,8 +1,8 @@
 @import "parameters";
 
 .home-navbar .bg-dark {
-  background: #212529 !important;
-  position: relative;
+  background: rgba(0, 0, 0, 0.5) !important;
+  position: fixed;
 }
 
 .navbar-dark .navbar-toggler {

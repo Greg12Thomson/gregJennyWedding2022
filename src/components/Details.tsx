@@ -3,7 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 
 function Details() {
     return (
-        <div className="details">
+        <div className="details" id="details">
             <Container>
                 <h1 className="page-header">
                     Wedding Details

@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 code {
   font-family: $code-font-family, monospace;
 }

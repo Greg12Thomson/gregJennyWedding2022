@@ -5,7 +5,7 @@ import HerImage from "../images/File_003.png";
 // TODO: fix styling 
 function OurStory() {
     return (
-        <div className="our-story">
+        <div className="our-story" id="our-story">
             <Container>
                 <h1 className="page-header">
                     Our Story

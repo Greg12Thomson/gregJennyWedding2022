@@ -5,7 +5,7 @@ import MapImage from "../images/map.png";
 
 function GettingThere() {
   return (
-    <div className="getting-there">
+    <div className="getting-there" id="travel-guide">
       <Container>
         <h1 className="page-header">
             Travel Guide
