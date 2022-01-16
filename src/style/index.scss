@@ -19,7 +19,8 @@ code {
 // TODO: fix background image for mobile 
 .App-header {
   background-image:  url('../images/bw_smile.jpg') !important;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top;
   background-color: $my-darkgreen;
   min-height: 100vh;
   display: flex;
