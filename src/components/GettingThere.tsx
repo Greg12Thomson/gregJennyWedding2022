@@ -56,6 +56,18 @@ function GettingThere() {
             </p>
           </Col>
           <Col xs={12} md={6}>
+            <h5>Driving</h5>
+            <p>
+              Our friends and family are coming from across different areas, so I am more than certain
+              shared lifts will be possible. If you know someone, or are driving and have spare seats,
+              please do get in touch we can help set up a carpool if you are happy to, we promise
+              everyone invited is wonderful. <br/><br/>
+
+              There are plenty of parking spaces but it is always great for the environment to share!
+              Pop the address into the sat nav/Google Maps and you’ll get there no bother. 
+            </p>
+          </Col>
+          <Col xs={12} md={6}>
             <h5>Public Transport from Glasgow</h5>
             <p>
               Glasgow to Edin train - Edin to Leauchers train - Leauchers to St Andrews bus (92B)
@@ -70,20 +82,8 @@ function GettingThere() {
               shoes for the walk!
             </p>
           </Col>
-          <Col xs={12} md={6}>
-            <h5>Driving</h5>
-            <p>
-              Our friends and family are coming from across different areas, so I am more than certain
-              shared lifts will be possible. If you know someone, or are driving and have spare seats,
-              please do get in touch we can help set up a carpool if you are happy to, we promise
-              everyone invited is wonderful. <br/><br/>
-
-              There are plenty of parking spaces but it is always great for the environment to share!
-              Pop the address into the sat nav/Google Maps and you’ll get there no bother. 
-            </p>
-          </Col>
           <Col xs={12} md={12}>
-            <h3>
+            <h3 className='staying-there'>
                 Staying There
             </h3>
             <p className="description">
@@ -108,19 +108,19 @@ function GettingThere() {
               15 minute drive to cambo estate
             </p>
           </Col>
-          <Col className="city-stays" xs={12} md={12}>
+          <Col className="city-stays" xs={12} md={6}>
             <h5>City Stays</h5>
             <p>
               There is an option to stay in Dundee but you would need to drive or get a taxi which will
               cost roughly £100.
             </p>
-            <h5>Luxury (£200+)</h5>
+            <h6>Luxury (£200+)</h6>
             <p>
               <a href="https://uk.hotels.com/ho206162/?q-check-in=2022-10-08&q-check-out=2022-10-09&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-order=BEST_SELLER&WOD=6&WOE=7&JHR=3&FPQ=4&MGT=1&ZSX=0&SYE=3&YGF=14">
                 Rufflets St Andrews  
               </a>
             </p>
-            <h5>Middle Ground (£100 - £200)</h5>
+            <h6>Middle Ground (£100 - £200)</h6>
             <p>
               <a href="https://uk.hotels.com/ho371216/?q-check-in=2022-10-08&q-check-out=2022-10-09&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-lid=10608287&sort-order=DISTANCE_FROM_LANDMARK&WOD=6&WOE=7&JHR=2&FPQ=3&MGT=1&ZSX=0&SYE=3&YGF=14">
                 The Bank  
@@ -130,7 +130,7 @@ function GettingThere() {
                 The Spindrift Guest House  
               </a>
             </p>
-            <h5>Budget (under £100)</h5>
+            <h6>Budget (under £100)</h6>
             <p>
               <a href="https://www.newinnstandrews.com/">
                 The New Inn
@@ -150,7 +150,7 @@ function GettingThere() {
               yourself a place right on the seafront, it really is beautiful (although very cold!)
             </p>
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={12} md={12}>
             <h5>Visit Scotland</h5>
             <p>
               Yes, Visit Scotland really does offer up accommodation! Have a look there if you are really struggling for accommodation options. 

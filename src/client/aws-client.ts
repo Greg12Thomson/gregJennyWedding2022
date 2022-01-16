@@ -25,15 +25,13 @@ export const getData = () => {
         });
 }
 
-interface PutDataProps {
-    firstName: string;
-    lastName: string;
+export interface PutDataProps {
+    name: string;
     email: string;
     attending: boolean;
     song?: String;
     plusOne?: boolean;
-    firstNamePlusOne?: String;
-    lastNamePlusOne?: String;
+    guestName?: String;
 }
 
 export const postData = async (body: PutDataProps) => {

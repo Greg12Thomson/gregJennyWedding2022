@@ -42,8 +42,8 @@ function Home() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#details">Details</Nav.Link>
               <Nav.Link href="#our-story">Our Story</Nav.Link>
+              <Nav.Link href="#details">Details</Nav.Link>
               <Nav.Link href="#travel-guide">Getting There</Nav.Link>
             </Nav>
           </Navbar.Collapse>

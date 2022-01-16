@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './style/index.scss';
 import './style/navbar.scss';
 import './style/heading.scss';
+import './style/gettingThere.scss';
+import './style/details.scss';
 import './style/rsvp.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';

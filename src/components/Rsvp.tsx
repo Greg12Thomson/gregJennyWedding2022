@@ -2,31 +2,29 @@ import React, {useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {Col, Container, Form, Row} from "react-bootstrap";
 import {Pages} from "./NavBar";
-import { postData } from "../client/aws-client";
+import { postData, PutDataProps } from "../client/aws-client";
 
 function Rsvp() {
     const history = useHistory();
     const initialErrors: string[] = []
-    const [plusOne, setPlusOne] = useState(false);
     const [errors, setErrors] = useState(initialErrors);
-    const [firstName, setFirstname] = useState("");
-    const [lastName, setLastName] = useState("");
+
+    const [name, setName] = useState("");
+    const [guestName, setGuestName] = useState("");
+    // TODO: add param for plus one
+    const [plusOne, setPlusOne] = useState(true);
+
     const [email, setEmail] = useState("");
     const [song, setSong] = useState("");
     const [attending, setAttending] = useState(undefined);
-    const [firstNamePlusOne, setFirstNamePlusOne] = useState("");
-    const [lastNamePlusOne, setLastNamePlusOne] = useState("");
     const [showErrorModal, setErrorModal] = useState(false);
 
 
     const handleSubmit = async (event: any, history: any) => {
         if (event) {
             const newErrors = [];
-            if (firstName === "") {
-                newErrors.push("firstName")
-            }
-            if (lastName === "") {
-                newErrors.push("lastName")
+            if (name === "") {
+                newErrors.push("name")
             }
             if (attending === undefined) {
                 newErrors.push("attending")
@@ -35,41 +33,34 @@ function Rsvp() {
                 if (email === "") {
                     newErrors.push("email")
                 }
-                // TODO: add red round input
                 if (song === "") {
                     newErrors.push("song")
                 }
                 if (plusOne) {
-                    if (lastNamePlusOne === "") {
-                        newErrors.push("lastNamePlusOne")
-                    }
-                    if (firstNamePlusOne === "") {
-                        newErrors.push("firstNamePlusOne")
+                    if (guestName === "") {
+                        newErrors.push("guestName")
                     }
                 }
             }
 
             if (newErrors.length === 0) {
                 // No errors, add RSVP
-                let postDataBody;
+                let postDataBody: PutDataProps;
 
                 if (attending) {
                     postDataBody = {
-                        firstName,
-                        lastName,
+                        name,
                         attending: true,
-                        email: email || `${firstName}${lastName}`,
+                        email: email || name,
                         plusOne,
-                        lastNamePlusOne,
-                        firstNamePlusOne,
+                        guestName,
                         song
                     }
                 } else {
                     postDataBody = {
-                        firstName,
-                        lastName,
+                        name,
                         attending: false,
-                        email: email || `${firstName}${lastName}`,
+                        email: email || name,
                     }
                 } 
 
@@ -98,12 +89,12 @@ function Rsvp() {
         <>
         <div className="app-header">
             <div className="heading">
-                <h1 className="title">
+                <h2 className="title">
                     Jennifer & Gregor
-                </h1>
-                <h5>
-                    08.10.2022
-                </h5>
+                </h2>
+                <p className="sub-heading">
+                    Saturday 8th October, 2022 <span>&#183;</span> Cambo Estate, Scotland
+                </p>
             </div>
         </div>
         <div className="rsvp-page">
@@ -115,6 +106,8 @@ function Rsvp() {
                             Yes, I'll be there
                         </h1>
                         <p className="description">
+                            Join Greg and Jenny at Cambo Estate for a big auld Scottish wedding!<br/><br/>
+                            
                             Please let us know your plans by September 1, 2022. We can't wait to celebrate with you all!
                         </p>
                         <Col xs={12} md={12} className="wedding-detail-container">
@@ -134,16 +127,16 @@ function Rsvp() {
                         </Col>
                         <Form>
                             <NameInput
-                                lastName={lastName}
-                                firstName={firstName}
-                                setLastName={setLastName}
-                                setFirstname={setFirstname}
+                                name={name}
+                                guestName={guestName}
+                                setName={setName}
+                                setGuestName={setGuestName}
                                 errors={errors}/>
                             <AttendingCheckboxes setAttending={setAttending} errors={errors}/>
                             {attending ?
                                 (<>
                                         <div className="form-group email-form">
-                                            <label htmlFor="exampleInputEmail1">*Email</label>
+                                            <label htmlFor="exampleInputEmail1">Email</label>
                                             <Form.Control type="email"
                                                           className="form-control"
                                                           id="exampleInputEmail1"
@@ -157,27 +150,9 @@ function Rsvp() {
                                                 Email is required.
                                             </div>
                                         </div>
-
-                                        <div className="form-check">
-                                            <input className="form-check-input" type="checkbox" name="exampleRadios"
-                                                   id="exampleRadios1"
-                                                   onChange={(event) => setPlusOne(event.target.checked)}
-                                                   required/>
-                                            <label className="form-check-label" htmlFor="exampleRadios1">
-                                                I'm bringing a plus one
-                                            </label>
-                                        </div>
-                                        {plusOne ?
-                                            (<NameInput
-                                                    lastName={lastNamePlusOne}
-                                                    firstName={firstNamePlusOne}
-                                                    setLastName={setLastNamePlusOne}
-                                                    setFirstname={setFirstNamePlusOne}
-                                                    errors={errors}/>
-                                            ) : null}
                                         <div className="form-group song-form">
                                             <p>Please add a song of your choice which we can play on our big day!</p>
-                                            <label htmlFor="inputSong">*Song request</label>
+                                            <label htmlFor="inputSong">Song request</label>
                                             <Form.Control type="song"
                                                           className="form-control"
                                                           id="inputSong"
@@ -210,38 +185,38 @@ function Rsvp() {
 }
 
 interface NameInputProps {
-    firstName: string;
-    setFirstname: any;
-    setLastName: any;
-    lastName: string;
+    name: string;
+    setName: any;
+    setGuestName: any;
+    guestName: string;
     errors: string[];
 }
 
-const NameInput = ({firstName, setFirstname, setLastName, lastName, errors}: NameInputProps) =>
+const NameInput = ({name, setName, setGuestName, guestName, errors}: NameInputProps) =>
     <div className="form-group name-form">
         <Row>
-            <Col md={6}>
-                <label htmlFor="inputFirstName">*First Name</label>
+            <Col xs={12} md={6}>
+                <label htmlFor="inputName">Guest 1: Full name</label>
                 <Form.Control className="form-control"
-                              id="inputFirstName"
-                              value={firstName}
-                              isInvalid={errors.includes("firstName")}
-                              onChange={(event) => setFirstname(event.target.value)}
+                              id="inputName"
+                              value={name}
+                              isInvalid={errors.includes("name")}
+                              onChange={(event) => setName(event.target.value)}
                               required/>
-                <div className={errors.includes("firstName") ? "" : "hidden"}>
-                    First name is required.
+                <div className={errors.includes("name") ? "" : "hidden"}>
+                    A name is required.
                 </div>
             </Col>
-            <Col md={6}>
-                <label htmlFor="inputLastName">*Last Name</label>
+            <Col xs={12} md={6}>
+                <label htmlFor="inputGuestName">Guest 2: Full name</label>
                 <Form.Control className="form-control"
-                              id="inputLastName"
-                              value={lastName}
-                              isInvalid={errors.includes("lastName")}
-                              onChange={(event) => setLastName(event.target.value)}
+                              id="inputGuestName"
+                              value={guestName}
+                              isInvalid={errors.includes("guestName")}
+                              onChange={(event) => setGuestName(event.target.value)}
                               required/>
-                <div className={errors.includes("lastName") ? "" : "hidden"}>
-                    Last name is required.
+                <div className={errors.includes("guestName") ? "" : "hidden"}>
+                    A name is required.
                 </div>
             </Col>
         </Row>

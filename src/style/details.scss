@@ -1,0 +1,39 @@
+@import "parameters";
+
+.details {
+    background-color: $my-darkgreen2;
+    color: white;
+  
+    h1 {
+      color: white;
+    }
+  
+    h5 {
+      padding-bottom: 1rem;
+    }
+  
+    p {
+      padding: 0 8rem;
+    }
+  
+    .rsvp {
+      padding: .7rem 3.5rem;
+      margin-bottom: 3rem;
+      border-color: white !important;
+      color: white !important;
+  
+      &:hover {
+        background: $my-darkgreen2-hover !important;
+        color: white !important;
+      }
+    }
+  
+    .where {
+      border-left: solid 1px white;
+      margin-bottom: 3rem;
+    }
+  
+    .register {
+      margin-bottom: 3rem;
+    }
+  }

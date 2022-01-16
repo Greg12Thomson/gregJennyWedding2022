@@ -21,11 +21,11 @@ function OurStory() {
                         <p>
                             Greg and Jenny met when they were in third year at high school, but it wasn’t
                             until after a summer of secret walks, side glances at parties and two years that
-                            Greg plucked up the courage to ask her out across MSN. <br/>
+                            Greg plucked up the courage to ask her out across MSN. <br/><br/>
                             They have travelled all over the world, both together and independently, and have
-                            amassed a total of 37 living and thriving house plants. <br/>
+                            amassed a total of 37 living and thriving house plants. <br/><br/>
                             On the day you join them to celebrate their marriage at Cambo Estate, they will
-                            have been together for a total of 12 years. <br/>
+                            have been together for a total of 12 years. <br/><br/>
                             They cannot wait to share their day of love, food, dancing and drinks with you.
                         </p>
                     </Col>
