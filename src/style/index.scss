@@ -35,6 +35,8 @@ code {
 
   @media (max-width: $mobile-max-width) {
     background-image:  url('../images/bw_smile_small.jpg') !important;
+    background-size: cover;
+    background-position: center;
   }
 
   /* iPad Portrait */
