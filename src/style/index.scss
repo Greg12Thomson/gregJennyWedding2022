@@ -5,6 +5,7 @@ body {
   font-family: $default-font-family !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .hidden {
@@ -15,6 +16,7 @@ code {
   font-family: $code-font-family, monospace;
 }
 
+// TODO: fix background image for mobile 
 .App-header {
   background-image:  url('../images/bw_smile.jpg') !important;
   background-attachment: fixed;
