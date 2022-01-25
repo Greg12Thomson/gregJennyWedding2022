@@ -10,26 +10,47 @@ function Details() {
                 </h1>
                 <Row>
                     <Col className="when" xs={6} md={6}>
-                        <Row className="centered">
-                            <h5>
-                                When?
-                            </h5>
-                        </Row>
-                        <Row className="centered">
+                        <Row>
                             <p>
-                                Saturday 8th October, 2022, 2PM
+                                Ceremony - 1.30pm
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                                Dinner - 5pm
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                                Band starts - 8pm
                             </p>
                         </Row>
                     </Col>
                     <Col className="where" xs={6} md={6} >
-                        <Row className="centered">
-                            <h5>
-                                Where?
-                            </h5>
-                        </Row>
-                        <Row className="centered">
+                        <Row>
                             <p>
-                                Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
+                            </p>
+                        </Row>
+                        <Row>
+                            <p className="first">
+                                2.15pm - After ceremony
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                            </p>
+                        </Row>
+                        <Row>
+                            <p>
+                                7pm - Reception
                             </p>
                         </Row>
                     </Col>

@@ -32,6 +32,7 @@ export interface PutDataProps {
     song?: String;
     plusOne?: boolean;
     guestName?: String;
+    shouldHaveGuest?: boolean;
 }
 
 export const postData = async (body: PutDataProps) => {

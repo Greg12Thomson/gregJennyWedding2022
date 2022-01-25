@@ -44,7 +44,7 @@ function Home() {
               <Nav.Link href="#home">Home</Nav.Link>
               <Nav.Link href="#our-story">Our Story</Nav.Link>
               <Nav.Link href="#details">Details</Nav.Link>
-              <Nav.Link href="#travel-guide">Getting There</Nav.Link>
+              <Nav.Link href="#travel-guide">Travel Guide</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
