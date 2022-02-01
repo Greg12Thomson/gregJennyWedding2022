@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import Confirmation from "./Confirmation";
+import confetti from 'canvas-confetti';
 import queryString from 'query-string'
 import { useHistory, useLocation } from "react-router-dom";
 import { Col, Container, Form, Row}  from "react-bootstrap";
-import { Pages } from "./NavBar";
 import { postData, PutDataProps } from "../client/aws-client";
 
 function Rsvp() {
@@ -20,6 +21,7 @@ function Rsvp() {
     const [song, setSong] = useState("");
     const [attending, setAttending] = useState(undefined);
     const [showErrorModal, setErrorModal] = useState(false);
+    const [complete, setComplete] = useState(false);
 
 
     const handleSubmit = async (event: any, history: any) => {
@@ -70,16 +72,23 @@ function Rsvp() {
 
                 // Add to DDB
                 try {
+                    confetti({
+                        zIndex: 999,
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.8 }
+                    });
+                    
                     const response = await postData(postDataBody);
 
                     if (response && response.success) {
-                        history.push(Pages.Confirm);
+                        setComplete(true);
                     } else {
-                        console.log("Failed, but no exception");
+                        console.error("Failed, but no exception");
                         setErrorModal(true);
                     }
                 } catch (error) {
-                    console.log("Oops! That's embarrassing");
+                    console.error("Oops! That's embarrassing");
                     setErrorModal(true);
                 }
             } else {
@@ -88,9 +97,13 @@ function Rsvp() {
         }
     }
 
+    if (complete) {
+        return Confirmation();
+    }
+
 
     return (
-        <>
+    <>
         <div className="app-header">
             <div className="heading">
                 <h2 className="title">
@@ -118,13 +131,13 @@ function Rsvp() {
                             <div className="wedding-details-box">
                                 <h4>Details</h4>
                                 <b>Date: </b>
-                                October 8, 2022, 2PM <br/>
+                                October 8, 2022, 1PM <br/>
                                 <b>Address: </b>
                                 Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
                                 Saturday, October 8, 2022 <br/>
                                 <hr/>
                                 <h4>Ceremony & Reception</h4>
-                                <b>Ceremony:</b> 1pm <br/>
+                                <b>Ceremony:</b> 1.30pm <br/>
                                 <b>Evening Guests:</b> 7pm <br/>
                                 <hr/>
                             </div>
