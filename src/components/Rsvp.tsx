@@ -78,7 +78,7 @@ function Rsvp() {
                         spread: 70,
                         origin: { y: 0.8 }
                     });
-                    
+
                     const response = await postData(postDataBody);
 
                     if (response && response.success) {
@@ -131,10 +131,9 @@ function Rsvp() {
                             <div className="wedding-details-box">
                                 <h4>Details</h4>
                                 <b>Date: </b>
-                                October 8, 2022, 1PM <br/>
-                                <b>Address: </b>
-                                Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD
                                 Saturday, October 8, 2022 <br/>
+                                <b>Address: </b>
+                                Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD<br/>
                                 <hr/>
                                 <h4>Ceremony & Reception</h4>
                                 <b>Ceremony:</b> 1.30pm <br/>
