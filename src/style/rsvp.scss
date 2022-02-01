@@ -1,5 +1,34 @@
 @import "parameters";
 
+.app-header-confirm {
+  background-image:  url('../images/bw_laugh_crop.jpg') !important;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: $my-darkgreen;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media (max-width: $mobile-max-width) {
+    background-image:  url('../images/bw_laugh_crop.jpg') !important;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* iPad Portrait */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-image:  url('../images/bw_laugh_crop.jpg') !important;
+  }
+}
+
 .app-header {
   background-image:  url('../images/bw_smile.jpg') !important;
   background-attachment: fixed;
@@ -60,13 +89,16 @@
   }
 
   .button {
+    font-family: $default-font-family;
     padding: .7rem .5rem;
     background-color: $my-darkgreen2;
     color: #f8f9fa !important;
     width: 100%;
     cursor: pointer;
+    border-radius: 0.7rem;
     &:hover {
       background: $my-darkgreen2-hover !important;
+      color: white !important;
     }
   }
 
@@ -96,6 +128,7 @@
     color: white;
     padding: 1rem;
     margin-bottom: 2rem;
+    border-radius: 0.7rem;
     hr {
       border-color: white;
     }
@@ -116,7 +149,6 @@
 
   .form-check {
     margin-bottom: 1rem;
-    display: flex;
   }
 
   form {

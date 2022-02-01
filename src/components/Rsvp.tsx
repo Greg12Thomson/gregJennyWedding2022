@@ -74,7 +74,7 @@ function Rsvp() {
                 try {
                     confetti({
                         zIndex: 999,
-                        particleCount: 100,
+                        particleCount: 200,
                         spread: 70,
                         origin: { y: 0.8 }
                     });

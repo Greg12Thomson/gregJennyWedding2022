@@ -16,11 +16,9 @@ code {
   font-family: $code-font-family, monospace;
 }
 
-// TODO: fix background image for mobile 
 .App-header {
   background-image:  url('../images/bw_smile.jpg') !important;
-  background-repeat: no-repeat;
-  background-position: top;
+  background-attachment: fixed;
   background-color: $my-darkgreen;
   min-height: 100vh;
   display: flex;
