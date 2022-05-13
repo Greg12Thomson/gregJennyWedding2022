@@ -12,6 +12,56 @@ body {
   visibility: hidden;
 }
 
+#fade-in {
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+   -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+       animation: fadein 2s;
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+}
+
+#fade-in-slow {
+  -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 4s; /* Firefox < 16 */
+   -ms-animation: fadein 4s; /* Internet Explorer */
+    -o-animation: fadein 4s; /* Opera < 12.1 */
+       animation: fadein 4s;
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+}
+
 code {
   font-family: $code-font-family, monospace;
 }
@@ -50,6 +100,10 @@ code {
   background: transparent;
 }
 
+// Fix burger menu colours
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
 
 .rsvp {
   padding: .7rem .5rem;
@@ -61,10 +115,28 @@ code {
   justify-content: center;
 }
 
+.when-where-wear-details {
+  text-align: left;
+  padding-top: 2rem;
+  align-self: center;
+}
+
+.when-where-wear {
+  .img-thumbnail {
+    border: none;
+    border-radius: 10px;
+    padding: 0 3rem 1rem 3rem;
+
+    @media (max-width: $mobile-max-width) {
+      transform: rotate(5deg);
+    }
+  }
+}
+
 .our-story {
   padding-right: 30px;
   padding-left: 30px;
-  color: $my-darkgreen2;
+  color: $my-darkgreen;
 
   .page-header {
     padding: 2rem 3rem 0 3rem;
@@ -74,6 +146,10 @@ code {
     border: none;
     border-radius: 10px;
     padding: 1rem 3rem 1rem 3rem;
+
+    @media (max-width: $mobile-max-width) {
+      transform: rotate(-5deg);
+    }
   }
 
   p {
@@ -89,7 +165,7 @@ code {
 }
 
 .footer {
-  background-color: $my-darkgreen2;
+  background-color: $my-darkgreen;
   color: white;
   height: auto;
   width: 100%;
@@ -106,5 +182,5 @@ code {
 
 .page-header {
   padding: 2rem 3rem 2rem 3rem;
-  color: $my-darkgreen2;
+  color: $my-darkgreen;
 }

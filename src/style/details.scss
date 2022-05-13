@@ -1,7 +1,7 @@
 @import "parameters";
 
 .details {
-    background-color: $my-darkgreen2;
+    background-color: $my-darkgreen;
     color: white;
   
     h1 {
@@ -15,7 +15,7 @@
       color: white !important;
   
       &:hover {
-        background: $my-darkgreen2-hover !important;
+        background: $my-darkgreen-hover !important;
         color: white !important;
       }
     }

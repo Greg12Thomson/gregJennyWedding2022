@@ -6,6 +6,16 @@ import { useHistory, useLocation } from "react-router-dom";
 import { Col, Container, Form, Row}  from "react-bootstrap";
 import { postData, PutDataProps } from "../client/aws-client";
 
+enum StartChoice {
+    Tofu = "Tofu and Cauliflower in Ginger Plum Sauce (Ve, Gf)",
+    Pate = "Vegan Mushroom Pate on Melba Toast (Ve, Gf)"
+}
+
+enum MainChoice {
+    BlackBeanCakes = "Black Bean Cakes with Grilled Vegetable & Fire Roasted Tomatoes (Ve, Gf)",
+    Wellington = "Mushroom and Chestnut Wellington (Ve)"
+}
+
 function Rsvp() {
     const history = useHistory();
     const { search } = useLocation();
@@ -18,6 +28,8 @@ function Rsvp() {
     const [guestName, setGuestName] = useState("");
     const [plusOne] = useState(hasGuest ? true : false);
     const [email, setEmail] = useState("");
+    const [starter, setStarter] = useState(StartChoice.Tofu);
+    const [main, setMain] = useState(MainChoice.BlackBeanCakes);
     const [song, setSong] = useState("");
     const [attending, setAttending] = useState(undefined);
     const [showErrorModal, setErrorModal] = useState(false);
@@ -153,6 +165,7 @@ function Rsvp() {
                             {attending ?
                                 (<>
                                         <div className="form-group email-form">
+                                            {/* TODO: No need for email? */}
                                             <label htmlFor="exampleInputEmail1">Email</label>
                                             <Form.Control type="email"
                                                           className="form-control"
@@ -161,12 +174,19 @@ function Rsvp() {
                                                           value={email}
                                                           onChange={(event) => setEmail(event.target.value)}
                                                           required/>
-                                            <p>We will use your email to contact you about meal preferences closer to
-                                                the time.</p>
+                                            <p>We will use your email to contact you if required - don't worry, it will be securly stored.</p>
                                             <div className={errors.includes("email") ? "" : "hidden"}>
                                                 Email is required.
                                             </div>
                                         </div>
+                                        { hasGuest ? (
+                                            <FoodChoice
+                                                starter={starter}
+                                                setStarter={setStarter}
+                                                main={main}
+                                                setMain={setMain}
+                                                errors={errors} />
+                                        ) : null }
                                         <div className="form-group song-form">
                                             <p>Please add a song of your choice which we can play on our big day!</p>
                                             <label htmlFor="inputSong">Song request</label>
@@ -240,6 +260,61 @@ const NameInput = ({name, setName, setGuestName, guestName, errors, hasGuest}: N
                 </Col>
                 ) : null }
         </Row>
+    </div>
+
+interface FoodChoiceProps {
+    starter: string;
+    setStarter: any;
+    main: string;
+    setMain: any;
+    errors: string[];
+}
+
+const FoodChoice = ({starter, setStarter, main, setMain, errors}: FoodChoiceProps) =>
+    <div className="food-choice-container">
+        <p>Please select what you would like for the meal.</p>
+        <p className="food-choice-label">Starter</p>
+        <div className="food-choice">
+            <Form.Check
+                inline
+                label={StartChoice.Tofu}
+                isInvalid={errors.includes("starter")}
+                name="groupStarter"
+                type="radio"
+                id="starter-radio-1"
+                onChange={(_) => setStarter(StartChoice.Tofu)}
+            />
+            <Form.Check
+                inline
+                label={StartChoice.Pate}
+                isInvalid={errors.includes("starter")}
+                name="groupStarter"
+                type="radio"
+                id="starter-radio-2"
+                onChange={(_) => setStarter(StartChoice.Tofu)}
+            />
+        </div>
+        <p className="food-choice-label">Main</p>
+        <div className="food-choice">
+            <Form.Check
+                inline
+                label={MainChoice.BlackBeanCakes}
+                isInvalid={errors.includes("starter")}
+                name="groupMain"
+                type="radio"
+                id="main-radio-1"
+                onChange={(_) => setStarter(StartChoice.Tofu)}
+            />
+            <Form.Check
+                inline
+                label={MainChoice.Wellington}
+                isInvalid={errors.includes("starter")}
+                name="groupMain"
+                type="radio"
+                id="main-radio-2"
+                onChange={(_) => setStarter(StartChoice.Tofu)}
+            />
+        </div>
     </div>
 
 const AttendingCheckboxes = ({setAttending, errors}: { setAttending: any; errors: string[] }) =>

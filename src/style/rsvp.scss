@@ -60,6 +60,20 @@
   }
 }
 
+.food-choice {
+  display: flex;
+  flex-direction: column;
+}
+
+.food-choice-label {
+  display: flex;
+  font-weight: 600;
+}
+
+.food-choice-container {
+  margin-bottom: 2rem;
+}
+
 .rsvp-page {
   margin-top: 2rem;
   padding-right: 10%;
@@ -92,13 +106,13 @@
   .button {
     font-family: $default-font-family;
     padding: .7rem .5rem;
-    background-color: $my-darkgreen2;
+    background-color: $my-darkgreen;
     color: #f8f9fa !important;
     width: 100%;
     cursor: pointer;
     border-radius: 0.7rem;
     &:hover {
-      background: $my-darkgreen2-hover !important;
+      background: $my-darkgreen-hover !important;
       color: white !important;
     }
   }
@@ -125,7 +139,7 @@
   .wedding-details-box {
     font-family: $default-font-family;
     text-align: left;
-    background-color: $my-darkgreen2;
+    background-color: $my-darkgreen;
     color: white;
     padding: 1rem;
     margin-bottom: 2rem;
@@ -172,15 +186,17 @@
 }
 
 .content {
-  color: $my-darkgreen2;
+  color: $my-darkgreen;
 
-  .rsvp-section {
-    background: $my-darkgreen2;
+  .invite-section {
+    background: $my-darkgreen;
     width: 100%;
     color: white;
 
     h4 {
       padding: 3rem 2rem 0rem 2rem;
+      font-family: Savoye LET, sans-serif;
+      font-size: 2rem;
     }
 
     h3 {
@@ -202,7 +218,7 @@
       color: white !important;
 
       &:hover {
-        background: $my-darkgreen2-hover !important;
+        background: $my-darkgreen-hover !important;
         color: white !important;
       }
     }
