@@ -117,11 +117,11 @@ function Rsvp() {
     return (
     <>
         <div className="app-header">
-            <div className="heading">
+            <div className="heading" id="fade-in">
                 <h2 className="title">
                     Jennifer & Gregor
                 </h2>
-                <p className="sub-heading">
+                <p className="sub-heading" id="fade-in-slow">
                     Saturday 8th October, 2022 <span>&#183;</span> Cambo Estate, Scotland
                 </p>
             </div>
