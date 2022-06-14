@@ -17,9 +17,9 @@ function Confirmation() {
         <div className="rsvp-page">
             <Container>
                 <p className="confirm">
-                    For more information about the wedding, visit <a href={Pages.Home}>our website</a>.
+                    We look forward to celebrating with you! You can find a lot more about the wedding, where to stay and how to get there on <a href={Pages.Home}>our website</a>.
                 </p>
-                <Col xs={12} md={12} className="centered">
+                <Col xs={12} md={12} className="confirm-image">
                     <Image src={InstaxOne} thumbnail/>
                 </Col>
             </Container>

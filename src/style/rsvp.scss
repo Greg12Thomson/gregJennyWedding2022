@@ -29,6 +29,22 @@
   }
 }
 
+.confirm {
+  color: $my-darkgreen;
+}
+
+.confirm-image {
+  justify-content: center;
+
+  .img-thumbnail {
+    border: none;
+    border-radius: 10px;
+    padding: 0 3rem 1rem 3rem;
+    transform: rotate(5deg);
+    margin-bottom: 2rem;
+  }
+}
+
 .app-header {
   background-image:  url('../images/bw_smile.jpg') !important;
   background-repeat: no-repeat;
