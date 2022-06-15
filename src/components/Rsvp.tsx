@@ -21,6 +21,7 @@ function Rsvp() {
     const [starter, setStarter] = useState(undefined);
     const [main, setMain] = useState(undefined);
     const [song, setSong] = useState("");
+    const [dietryRequirments, setDietryRequirments] = useState("");
     const [showErrorModal, setErrorModal] = useState(false);
     const [complete, setComplete] = useState(false);
 
@@ -68,8 +69,6 @@ function Rsvp() {
 
             // TODO: send to DDB
             if (newErrors.length === 0) {
-
-                console.log('newErrors: ', newErrors);
                 // No errors, add RSVP
                 let postDataBody: PutDataProps;
 
@@ -78,8 +77,13 @@ function Rsvp() {
                         name,
                         attending: true,
                         email: email || name,
+                        main,
+                        starter,
+                        dietryRequirments,
                         plusOne,
                         guestName,
+                        guestStarter,
+                        guestMain,
                         song,
                         shouldHaveGuest: hasGuest ? true : false
                     }
@@ -175,8 +179,8 @@ function Rsvp() {
                                 {attending &&
                                     (<>
                                         <div className="form-group email-form">
-                                            {/* TODO: No need for email? */}
                                             <label htmlFor="exampleInputEmail1">Email</label>
+                                            <p className="food-choice-label-secondary">We will use your email to contact you if required - don't worry, it will be securly stored.</p>
                                             <Form.Control type="email"
                                                 className="form-control"
                                                 id="exampleInputEmail1"
@@ -184,25 +188,24 @@ function Rsvp() {
                                                 value={email}
                                                 onChange={(event) => setEmail(event.target.value)}
                                                 required />
-                                            <p>We will use your email to contact you if required - don't worry, it will be securly stored.</p>
                                             <div className={errors.includes("email") ? "" : "hidden"}>
                                                 Email is required.
                                             </div>
                                         </div>
-                                        {hasGuest && (
-                                            <RsvpFoodOptions
-                                                setStarter={setStarter}
-                                                setMain={setMain}
-                                                errors={errors}
-                                                name={name}
-                                                hasGuest={hasGuest}
-                                                guestName={guestName}
-                                                setGuestStarter={setGuestStarter}
-                                                setGuestMain={setGuestMain} />
-                                        )}
+                                        <RsvpFoodOptions
+                                            setStarter={setStarter}
+                                            setMain={setMain}
+                                            errors={errors}
+                                            name={name}
+                                            hasGuest={hasGuest}
+                                            guestName={guestName}
+                                            dietryRequirments={dietryRequirments}
+                                            setGuestStarter={setGuestStarter}
+                                            setGuestMain={setGuestMain}
+                                            setDietryRequirments={setDietryRequirments}/>
                                         <div className="form-group song-form">
-                                            <p>Please add a song of your choice which we can play on our big day!</p>
                                             <label htmlFor="inputSong">Song request</label>
+                                            <p className="food-choice-label-secondary">Please add a song of your choice which we can play on our big day!</p>
                                             <Form.Control type="song"
                                                 className="form-control"
                                                 id="inputSong"

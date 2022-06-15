@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from "react-bootstrap";
+import { Col, Form, Row } from "react-bootstrap";
 
 enum StartChoice {
     Tofu = "Tofu and Cauliflower in Ginger Plum Sauce (Ve, Gf)",
@@ -15,21 +15,31 @@ interface RsvpFoodChoiceProps {
     setStarter: Function;
     setMain: Function;
     errors: string[];
-    hasGuest: string | string[];
+    hasGuest: string | string[] | null;
     name: string;
+    dietryRequirments: string;
     guestName?: string;
     setGuestStarter: Function;
     setGuestMain: Function;
+    setDietryRequirments: Function;
 }
 
-// TODO: add error handling
-// TODO: add guest food choice
-function RsvpFoodOptions({ setStarter, setMain, errors, hasGuest, name, guestName, setGuestMain, setGuestStarter }: RsvpFoodChoiceProps) {
+function RsvpFoodOptions({
+    setStarter,
+    setMain,
+    errors,
+    hasGuest,
+    name,
+    guestName,
+    setGuestMain,
+    setGuestStarter,
+    dietryRequirments,
+    setDietryRequirments }: RsvpFoodChoiceProps) {
 
     return (
         <div className="food-choice-container">
             <p>Please select what <strong>{name || 'you'}</strong> would like for the meal.</p>
-            <p className="food-choice-label">Starter</p>
+            <label className="food-choice-label">Starter</label>
             <div className="food-choice">
                 <Form.Check
                     inline
@@ -50,7 +60,7 @@ function RsvpFoodOptions({ setStarter, setMain, errors, hasGuest, name, guestNam
                     onChange={(_) => setStarter(StartChoice.Pate)}
                 />
             </div>
-            <p className="food-choice-label">Main</p>
+            <label className="food-choice-label">Main</label>
             <div className="food-choice">
                 <Form.Check
                     inline
@@ -73,8 +83,8 @@ function RsvpFoodOptions({ setStarter, setMain, errors, hasGuest, name, guestNam
             </div>
             {hasGuest &&
                 <>
-                    <p>Please select what <strong>{guestName || 'the second guest'}</strong> would like for the meal.</p>
-                    <p className="food-choice-label">Starter</p>
+                    <p className="guest-food-choice">Please select what <strong>{guestName || 'the second guest'}</strong> would like for the meal.</p>
+                    <label className="food-choice-label">Starter</label>
                     <div className="food-choice">
                         <Form.Check
                             inline
@@ -95,7 +105,7 @@ function RsvpFoodOptions({ setStarter, setMain, errors, hasGuest, name, guestNam
                             onChange={(_) => setGuestStarter(StartChoice.Pate)}
                         />
                     </div>
-                    <p className="food-choice-label">Main</p>
+                    <label className="food-choice-label">Main</label>
                     <div className="food-choice">
                         <Form.Check
                             inline
@@ -118,6 +128,20 @@ function RsvpFoodOptions({ setStarter, setMain, errors, hasGuest, name, guestNam
                     </div>
                 </>
             }
+            <Row className="dietry-reqs">
+                <Col xs={12}>
+                    <label className="food-choice-label" htmlFor="dietryReqs">Dietry requrements</label>
+                    {hasGuest
+                        ? <p className="food-choice-label-secondary">Please add any dietry requirments any guest may have.</p>
+                        : <p className="food-choice-label-secondary">Please add any dietry requirments you have.</p>
+                    }
+                    <Form.Control className="form-control"
+                        id="dietryReqs"
+                        value={dietryRequirments}
+                        onChange={(event) => setDietryRequirments(event.target.value)}
+                    />
+                </Col>
+            </Row>
         </div>
     );
 }

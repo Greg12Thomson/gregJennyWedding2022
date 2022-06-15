@@ -29,9 +29,14 @@ export interface PutDataProps {
     name: string;
     email: string;
     attending: boolean;
-    song?: String;
+    song?: string;
+    main?: string;
+    starter?: string;
+    dietryRequirments?: string;
     plusOne?: boolean;
-    guestName?: String;
+    guestName?: string;
+    guestMain?: string;
+    guestStarter?: string;
     shouldHaveGuest?: boolean;
 }
 
