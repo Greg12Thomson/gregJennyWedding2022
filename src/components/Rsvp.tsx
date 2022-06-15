@@ -5,16 +5,7 @@ import queryString from 'query-string'
 import { useHistory, useLocation } from "react-router-dom";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { postData, PutDataProps } from "../client/aws-client";
-
-enum StartChoice {
-    Tofu = "Tofu and Cauliflower in Ginger Plum Sauce (Ve, Gf)",
-    Pate = "Vegan Mushroom Pate on Melba Toast (Ve, Gf)"
-}
-
-enum MainChoice {
-    BlackBeanCakes = "Black Bean Cakes with Grilled Vegetable & Fire Roasted Tomatoes (Ve, Gf)",
-    Wellington = "Mushroom and Chestnut Wellington (Ve)"
-}
+import RsvpFoodOptions from './RsvpFoodOptions';
 
 function Rsvp() {
     const history = useHistory();
@@ -25,15 +16,19 @@ function Rsvp() {
 
     const [errors, setErrors] = useState(initialErrors);
     const [name, setName] = useState("");
-    const [guestName, setGuestName] = useState("");
-    const [plusOne] = useState(hasGuest ? true : false);
-    const [email, setEmail] = useState("");
-    const [starter, setStarter] = useState(StartChoice.Tofu);
-    const [main, setMain] = useState(MainChoice.BlackBeanCakes);
-    const [song, setSong] = useState("");
     const [attending, setAttending] = useState(undefined);
+    const [email, setEmail] = useState("");
+    const [starter, setStarter] = useState(undefined);
+    const [main, setMain] = useState(undefined);
+    const [song, setSong] = useState("");
     const [showErrorModal, setErrorModal] = useState(false);
     const [complete, setComplete] = useState(false);
+
+    // Guest state
+    const [plusOne] = useState(hasGuest ? true : false);
+    const [guestName, setGuestName] = useState("");
+    const [guestStarter, setGuestStarter] = useState(undefined);
+    const [guestMain, setGuestMain] = useState(undefined);
 
 
     const handleSubmit = async (event: any, history: any) => {
@@ -56,10 +51,25 @@ function Rsvp() {
                     if (guestName === "") {
                         newErrors.push("guestName")
                     }
+                    if (guestMain === undefined) {
+                        newErrors.push("guestMain")
+                    }
+                    if (guestStarter === undefined) {
+                        newErrors.push("guestStarter")
+                    }
+                }
+                if (main === undefined) {
+                    newErrors.push("main")
+                }
+                if (starter === undefined) {
+                    newErrors.push("starter")
                 }
             }
 
+            // TODO: send to DDB
             if (newErrors.length === 0) {
+
+                console.log('newErrors: ', newErrors);
                 // No errors, add RSVP
                 let postDataBody: PutDataProps;
 
@@ -93,7 +103,7 @@ function Rsvp() {
 
                     const response = await postData(postDataBody);
 
-                    if (response && response.success) {
+                    if (response?.success) {
                         setComplete(true);
                     } else {
                         console.error("Failed, but no exception");
@@ -110,7 +120,7 @@ function Rsvp() {
     }
 
     if (complete) {
-        return Confirmation();
+        return Confirmation({attending});
     }
 
 
@@ -135,7 +145,7 @@ function Rsvp() {
                                 Yes, I'll be there
                             </h1>
                             <p className="description">
-                                Join Greg and Jenny at Cambo Estate for a big auld Scottish wedding!<br /><br />
+                                Together with their families<br />Jennifer Anne Cleeton and Gregor Robert Thomson<br />Request the pleasure of your company at the celebrations of their wedding<br /><br />
 
                                 Please let us know your plans by September 1, 2022. We can't wait to celebrate with you all!
                             </p>
@@ -161,8 +171,8 @@ function Rsvp() {
                                     setGuestName={setGuestName}
                                     errors={errors}
                                     hasGuest={hasGuest} />
-                                <AttendingCheckboxes setAttending={setAttending} errors={errors} />
-                                {attending ?
+                                <AttendingCheckboxes setAttending={setAttending} errors={errors} hasGuest={hasGuest} />
+                                {attending &&
                                     (<>
                                         <div className="form-group email-form">
                                             {/* TODO: No need for email? */}
@@ -179,17 +189,17 @@ function Rsvp() {
                                                 Email is required.
                                             </div>
                                         </div>
-                                        {hasGuest ? (
-                                            <FoodChoice
-                                                starter={starter}
+                                        {hasGuest && (
+                                            <RsvpFoodOptions
                                                 setStarter={setStarter}
-                                                main={main}
                                                 setMain={setMain}
                                                 errors={errors}
-                                                hasGuest={hasGuest}
                                                 name={name}
-                                                guestName={guestName} />
-                                        ) : null}
+                                                hasGuest={hasGuest}
+                                                guestName={guestName}
+                                                setGuestStarter={setGuestStarter}
+                                                setGuestMain={setGuestMain} />
+                                        )}
                                         <div className="form-group song-form">
                                             <p>Please add a song of your choice which we can play on our big day!</p>
                                             <label htmlFor="inputSong">Song request</label>
@@ -205,16 +215,16 @@ function Rsvp() {
                                             </div>
                                         </div>
                                     </>
-                                    ) : null}
+                                    )}
                                 <div className="button" onClick={(event) => handleSubmit(event, history)}>
                                     Submit
                                 </div>
-                                {showErrorModal ?
+                                {showErrorModal && (
                                     <div className="errorMessage">
                                         <h5>Oops! That's embarrassing</h5>
                                         <p>Sorry, it doesn't seem to be working. Try retrying and if that doesn't work, contact Greg or Jenny.</p>
                                     </div>
-                                    : null}
+                                )}
                             </Form>
                         </Col>
                     </Row>
@@ -248,7 +258,7 @@ const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }:
                     A name is required.
                 </div>
             </Col>
-            {hasGuest ?
+            {hasGuest &&
                 (<Col xs={12} md={6}>
                     <label htmlFor="inputGuestName">Guest 2: Full name</label>
                     <Form.Control className="form-control"
@@ -260,126 +270,19 @@ const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }:
                     <div className={errors.includes("guestName") ? "" : "hidden"}>
                         A name is required.
                     </div>
-                </Col>
-                ) : null}
+                </Col>)
+            }
         </Row>
     </div>
 
-interface FoodChoiceProps {
-    starter: string;
-    setStarter: any;
-    main: string;
-    setMain: any;
-    errors: string[];
-    hasGuest: string | string[];
-    name: string;
-    guestName?: string;
-}
-
-// TODO: add error handling
-// TODO: add guest food choice
-const FoodChoice = ({ starter, setStarter, main, setMain, errors, hasGuest, name, guestName }: FoodChoiceProps) =>
-    <div className="food-choice-container">
-        <p>Please select what <strong>{name || 'you'}</strong> would like for the meal.</p>
-        <p className="food-choice-label">Starter</p>
-        <div className="food-choice">
-            <Form.Check
-                inline
-                label={StartChoice.Tofu}
-                isInvalid={errors.includes("starter")}
-                name="groupStarter"
-                type="radio"
-                id="starter-radio-1"
-                onChange={(_) => setStarter(StartChoice.Tofu)}
-            />
-            <Form.Check
-                inline
-                label={StartChoice.Pate}
-                isInvalid={errors.includes("starter")}
-                name="groupStarter"
-                type="radio"
-                id="starter-radio-2"
-                onChange={(_) => setStarter(StartChoice.Tofu)}
-            />
-        </div>
-        <p className="food-choice-label">Main</p>
-        <div className="food-choice">
-            <Form.Check
-                inline
-                label={MainChoice.BlackBeanCakes}
-                isInvalid={errors.includes("starter")}
-                name="groupMain"
-                type="radio"
-                id="main-radio-1"
-                onChange={(_) => setStarter(StartChoice.Tofu)}
-            />
-            <Form.Check
-                inline
-                label={MainChoice.Wellington}
-                isInvalid={errors.includes("starter")}
-                name="groupMain"
-                type="radio"
-                id="main-radio-2"
-                onChange={(_) => setStarter(StartChoice.Tofu)}
-            />
-        </div>
-        {hasGuest ?
-            <>
-                <p>Please select what <strong>{guestName || 'the second guest'}</strong> would like for the meal.</p>
-                <p className="food-choice-label">Starter</p>
-                <div className="food-choice">
-                    <Form.Check
-                        inline
-                        label={StartChoice.Tofu}
-                        isInvalid={errors.includes("starter")}
-                        name="groupStarter"
-                        type="radio"
-                        id="starter-radio-1"
-                        onChange={(_) => setStarter(StartChoice.Tofu)}
-                    />
-                    <Form.Check
-                        inline
-                        label={StartChoice.Pate}
-                        isInvalid={errors.includes("starter")}
-                        name="groupStarter"
-                        type="radio"
-                        id="starter-radio-2"
-                        onChange={(_) => setStarter(StartChoice.Tofu)}
-                    />
-                </div>
-                <p className="food-choice-label">Main</p>
-                <div className="food-choice">
-                    <Form.Check
-                        inline
-                        label={MainChoice.BlackBeanCakes}
-                        isInvalid={errors.includes("starter")}
-                        name="groupMain"
-                        type="radio"
-                        id="main-radio-1"
-                        onChange={(_) => setStarter(StartChoice.Tofu)}
-                    />
-                    <Form.Check
-                        inline
-                        label={MainChoice.Wellington}
-                        isInvalid={errors.includes("starter")}
-                        name="groupMain"
-                        type="radio"
-                        id="main-radio-2"
-                        onChange={(_) => setStarter(StartChoice.Tofu)}
-                    />
-                </div>
-            </>
-            : null}
-    </div>
-
-const AttendingCheckboxes = ({ setAttending, errors }: { setAttending: any; errors: string[] }) =>
+const AttendingCheckboxes = ({ setAttending, errors, hasGuest }: { setAttending: any; errors: string[], hasGuest: string | string[] | null }) =>
     <>
         <Row>
             <Col md={6}>
                 <div className="form-check">
                     <Form.Check
                         inline
-                        label="We Will See You There!"
+                        label={hasGuest ? "We Will See You There!" : "I Will See You There!"}
                         isInvalid={errors.includes("attending")}
                         name="group1"
                         type="radio"
