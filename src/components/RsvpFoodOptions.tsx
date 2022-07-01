@@ -38,7 +38,7 @@ function RsvpFoodOptions({
 
     return (
         <div className="food-choice-container">
-            <p>Please select what <strong>{name || 'you'}</strong> would like for the meal.</p>
+            <p>Please select what {hasGuest ? <strong>{name || "you"}</strong> : "you"} would like for the meal.</p>
             <label className="food-choice-label">Starter</label>
             <div className="food-choice">
                 <Form.Check
@@ -80,6 +80,10 @@ function RsvpFoodOptions({
                     id="main-radio-2"
                     onChange={(_) => setMain(MainChoice.Wellington)}
                 />
+            </div>
+            <label className="food-choice-label">Dessert</label>
+            <div className="food-choice-label-secondary">
+                <p>A family favourite</p>
             </div>
             {hasGuest &&
                 <>

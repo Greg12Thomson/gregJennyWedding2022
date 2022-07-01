@@ -12,7 +12,7 @@ function Details() {
                     <Col className="when" xs={6} md={6}>
                         <Row>
                             <p>
-                                Ceremony - 1.30pm
+                                Ceremony - 1pm
                             </p>
                         </Row>
                         <Row>
@@ -41,7 +41,7 @@ function Details() {
                         </Row>
                         <Row>
                             <p className="first">
-                                2.15pm - After ceremony
+                                1.45pm - After ceremony
                             </p>
                         </Row>
                         <Row>

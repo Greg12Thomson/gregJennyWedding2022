@@ -76,6 +76,10 @@
   }
 }
 
+.top-description {
+  margin-bottom: 0;
+}
+
 .food-choice {
   display: flex;
   flex-direction: column;
@@ -235,6 +239,7 @@
     .row {
       margin: 0;
     }
+
     h5 {
       margin-top: 2rem;
       margin-bottom: .5rem;

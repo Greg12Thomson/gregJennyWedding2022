@@ -13,7 +13,7 @@ function Confirmation({ attending }: ConfirmationProps) {
             <div className="app-header-confirm">
                 <div className="heading">
                     <h2 className="title">
-                        Thanks for RSVPing
+                        Thank you!
                     </h2>
                 </div>
             </div>
@@ -21,11 +21,11 @@ function Confirmation({ attending }: ConfirmationProps) {
                 <Container>
                     {attending ? (
                         <p className="confirm">
-                            We look forward to celebrating with you! You can find a lot more about the wedding, where to stay and how to get there on <a href={Pages.Home}>our website</a>.
+                            We look forward to celebrating with you! You can find a lot more about the wedding, where to stay and how to get there <a href={Pages.Home}>here</a>.
                         </p>
                     ) : (
                         <p className="confirm" >
-                            Sorry that you can't make it!
+                            We’re sorry you won’t be able to celebrate with us.
                         </p>
                     )}
                     <Col xs={12} md={12} className="confirm-image">

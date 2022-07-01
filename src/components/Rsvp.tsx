@@ -109,6 +109,7 @@ function Rsvp() {
 
                     if (response?.success) {
                         setComplete(true);
+                        window.scrollTo(0, 0);
                     } else {
                         console.error("Failed, but no exception");
                         setErrorModal(true);
@@ -145,26 +146,24 @@ function Rsvp() {
                 <Container className="content">
                     <Row>
                         <Col xs={12} md={12} className="form-container">
-                            <h1 className="title">
-                                Yes, I'll be there
-                            </h1>
+                            <p className="top-description">
+                                Together with their families
+                            </p>
+                            <h3 className="top-description">Jennifer Anne Cleeton</h3>
+                            and<br />
+                            <h3 className="name">Gregor Robert Thomson</h3>
                             <p className="description">
-                                Together with their families<br />Jennifer Anne Cleeton and Gregor Robert Thomson<br />Request the pleasure of your company at the celebrations of their wedding<br /><br />
-
+                                request the pleasure of your company at the celebrations of their wedding<br /><br />
                                 Please let us know your plans by September 1, 2022. We can't wait to celebrate with you all!
                             </p>
                             <Col xs={12} md={12} className="wedding-detail-container">
                                 <div className="wedding-details-box">
                                     <h4>Details</h4>
+                                    <hr/>
                                     <b>Date: </b>
                                     Saturday, October 8, 2022 <br />
                                     <b>Address: </b>
                                     Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD<br />
-                                    <hr />
-                                    <h4>Ceremony & Reception</h4>
-                                    <b>Ceremony:</b> 1.30pm <br />
-                                    <b>Evening Guests:</b> 7pm <br />
-                                    <hr />
                                 </div>
                             </Col>
                             <Form>

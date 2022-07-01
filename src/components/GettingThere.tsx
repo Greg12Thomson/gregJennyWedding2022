@@ -116,25 +116,25 @@ function GettingThere() {
             </p>
             <h6>Luxury (£200+)</h6>
             <p>
-              <a href="https://uk.hotels.com/ho206162/?q-check-in=2022-10-08&q-check-out=2022-10-09&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-order=BEST_SELLER&WOD=6&WOE=7&JHR=3&FPQ=4&MGT=1&ZSX=0&SYE=3&YGF=14">
+              <a href="https://www.rufflets.co.uk/">
                 Rufflets St Andrews  
               </a>
             </p>
             <h6>Middle Ground (£100 - £200)</h6>
             <p>
-              <a href="https://uk.hotels.com/ho371216/?q-check-in=2022-10-08&q-check-out=2022-10-09&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-lid=10608287&sort-order=DISTANCE_FROM_LANDMARK&WOD=6&WOE=7&JHR=2&FPQ=3&MGT=1&ZSX=0&SYE=3&YGF=14">
+              <a href="https://www.thebank-anstruther.co.uk/">
                 The Bank  
-              </a>
+              </a><br/>
 
-              <a href="https://uk.hotels.com/ho647208384/?q-check-in=2022-10-08&q-check-out=2022-10-09&q-rooms=1&q-room-0-adults=2&q-room-0-children=0&sort-lid=10608287&sort-order=DISTANCE_FROM_LANDMARK&WOD=6&WOE=7&JHR=2&FPQ=3&MGT=1&ZSX=0&SYE=3&YGF=14">
+              <a href="https://thespindrift.co.uk/">
                 The Spindrift Guest House  
               </a>
             </p>
-            <h6>Budget (under £100)</h6>
+            <h6>Budget (~£100)</h6>
             <p>
               <a href="https://www.newinnstandrews.com/">
                 The New Inn
-              </a>
+              </a><br/>
 
               <a href="https://uk.hotels.com/ho367740/the-golf-inn-st-andrews-united-kingdom/">
                 The Golf hotel
