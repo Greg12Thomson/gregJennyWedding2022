@@ -21,7 +21,7 @@ function Confirmation({ attending }: ConfirmationProps) {
                 <Container>
                     {attending ? (
                         <p className="confirm">
-                            We look forward to celebrating with you! You can find a lot more about the wedding, where to stay and how to get there <a href={Pages.Home}>here</a>.
+                            We look forward to celebrating with you! You can find a lot more about the wedding, where to stay and how to get there on our website <a href={Pages.Home}>here</a>.
                         </p>
                     ) : (
                         <p className="confirm" >

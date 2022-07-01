@@ -39,6 +39,7 @@ export interface PutDataProps {
     guestStarter?: string;
     shouldHaveGuest?: boolean;
     readableEmail?: string;
+    isEveningGuest?: boolean
 }
 
 export const postData = async (body: PutDataProps) => {

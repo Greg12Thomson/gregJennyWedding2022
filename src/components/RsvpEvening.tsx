@@ -1,34 +1,19 @@
 import React, { useState } from 'react';
 import Confirmation from "./Confirmation";
 import confetti from 'canvas-confetti';
-import queryString from 'query-string'
-import { useLocation } from "react-router-dom";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { postData, PutDataProps } from "../client/aws-client";
-import RsvpFoodOptions from './RsvpFoodOptions';
 
-function Rsvp() {
-    const { search } = useLocation();
-
+function RsvpEvening() {
     const initialErrors: string[] = [];
-    const hasGuest = queryString.parse(search).key;
 
     const [errors, setErrors] = useState(initialErrors);
     const [name, setName] = useState("");
     const [attending, setAttending] = useState(undefined);
     const [email, setEmail] = useState("");
-    const [starter, setStarter] = useState(undefined);
-    const [main, setMain] = useState(undefined);
     const [song, setSong] = useState("");
-    const [dietryRequirments, setDietryRequirments] = useState("");
     const [showErrorModal, setErrorModal] = useState(false);
     const [complete, setComplete] = useState(false);
-
-    // Guest state
-    const [plusOne] = useState(hasGuest ? true : false);
-    const [guestName, setGuestName] = useState("");
-    const [guestStarter, setGuestStarter] = useState(undefined);
-    const [guestMain, setGuestMain] = useState(undefined);
 
 
     const handleSubmit = async (event: any) => {
@@ -47,23 +32,6 @@ function Rsvp() {
                 if (song === "") {
                     newErrors.push("song")
                 }
-                if (hasGuest) {
-                    if (guestName === "") {
-                        newErrors.push("guestName")
-                    }
-                    if (guestMain === undefined) {
-                        newErrors.push("guestMain")
-                    }
-                    if (guestStarter === undefined) {
-                        newErrors.push("guestStarter")
-                    }
-                }
-                if (main === undefined) {
-                    newErrors.push("main")
-                }
-                if (starter === undefined) {
-                    newErrors.push("starter")
-                }
             }
 
             // TODO: send to DDB
@@ -76,22 +44,14 @@ function Rsvp() {
                         name,
                         attending: true,
                         email: email || name,
-                        main,
-                        starter,
-                        dietryRequirments,
-                        plusOne,
-                        guestName,
-                        guestStarter,
-                        guestMain,
                         song,
-                        shouldHaveGuest: hasGuest ? true : false
+                        isEveningGuest: true
                     }
                 } else {
                     postDataBody = {
                         name,
                         attending: false,
                         email: email || name,
-                        shouldHaveGuest: hasGuest ? true : false
                     }
                 }
 
@@ -152,7 +112,7 @@ function Rsvp() {
                             and<br />
                             <h3 className="name">Gregor Robert Thomson</h3>
                             <p className="description">
-                                request the pleasure of your company at the celebrations of their wedding<br /><br />
+                                request the pleasure of your company at their evening reception to celebrate their wedding<br /><br />
                                 Please let us know your plans by September 1, 2022. We can't wait to celebrate with you all!
                             </p>
                             <Col xs={12} md={12} className="wedding-detail-container">
@@ -163,17 +123,17 @@ function Rsvp() {
                                     Saturday, October 8, 2022 <br />
                                     <b>Address: </b>
                                     Cambo Estate, Kingsbarns, St Andrews, Fife, KY16 8QD<br />
+                                    <b>Arrival: </b>
+                                    7pm<br />
                                 </div>
                             </Col>
                             <Form>
                                 <NameInput
                                     name={name}
-                                    guestName={guestName}
                                     setName={setName}
-                                    setGuestName={setGuestName}
                                     errors={errors}
-                                    hasGuest={hasGuest} />
-                                <AttendingCheckboxes setAttending={setAttending} errors={errors} hasGuest={hasGuest} />
+                                />
+                                <AttendingCheckboxes setAttending={setAttending} errors={errors} />
                                 {attending &&
                                     (<>
                                         <div className="form-group email-form">
@@ -190,17 +150,6 @@ function Rsvp() {
                                                 Email is required.
                                             </div>
                                         </div>
-                                        <RsvpFoodOptions
-                                            setStarter={setStarter}
-                                            setMain={setMain}
-                                            errors={errors}
-                                            name={name}
-                                            hasGuest={hasGuest}
-                                            guestName={guestName}
-                                            dietryRequirments={dietryRequirments}
-                                            setGuestStarter={setGuestStarter}
-                                            setGuestMain={setGuestMain}
-                                            setDietryRequirments={setDietryRequirments}/>
                                         <div className="form-group song-form">
                                             <label htmlFor="inputSong">Song request</label>
                                             <p className="food-choice-label-secondary">Please add a song of your choice which we can play on our big day!</p>
@@ -238,17 +187,14 @@ function Rsvp() {
 interface NameInputProps {
     name: string;
     setName: any;
-    setGuestName: any;
-    guestName: string;
     errors: string[];
-    hasGuest: string | string[] | null;
 }
 
-const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }: NameInputProps) =>
+const NameInput = ({ name, setName, errors }: NameInputProps) =>
     <div className="form-group name-form">
         <Row>
-            <Col xs={12} md={hasGuest ? 6 : 12}>
-                <label htmlFor="inputName">{hasGuest ? "Guest 1: Full name" : "Full name"}</label>
+            <Col xs={12}>
+                <label htmlFor="inputName">Full name</label>
                 <Form.Control className="form-control"
                     id="inputName"
                     value={name}
@@ -259,31 +205,17 @@ const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }:
                     A name is required.
                 </div>
             </Col>
-            {hasGuest &&
-                (<Col xs={12} md={6}>
-                    <label htmlFor="inputGuestName">Guest 2: Full name</label>
-                    <Form.Control className="form-control"
-                        id="inputGuestName"
-                        value={guestName}
-                        isInvalid={errors.includes("guestName")}
-                        onChange={(event) => setGuestName(event.target.value)}
-                        required />
-                    <div className={errors.includes("guestName") ? "" : "hidden"}>
-                        A name is required.
-                    </div>
-                </Col>)
-            }
         </Row>
     </div>
 
-const AttendingCheckboxes = ({ setAttending, errors, hasGuest }: { setAttending: any; errors: string[], hasGuest: string | string[] | null }) =>
+const AttendingCheckboxes = ({ setAttending, errors }: { setAttending: any; errors: string[]}) =>
     <>
         <Row>
             <Col md={6}>
                 <div className="form-check">
                     <Form.Check
                         inline
-                        label={hasGuest ? "We Will See You There!" : "I Will See You There!"}
+                        label="I Will See You There!"
                         isInvalid={errors.includes("attending")}
                         name="group1"
                         type="radio"
@@ -314,4 +246,4 @@ const AttendingCheckboxes = ({ setAttending, errors, hasGuest }: { setAttending:
     </>
 
 
-export default Rsvp;
+export default RsvpEvening;
