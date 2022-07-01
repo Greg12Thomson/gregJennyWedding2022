@@ -38,9 +38,15 @@ export interface PutDataProps {
     guestMain?: string;
     guestStarter?: string;
     shouldHaveGuest?: boolean;
+    readableEmail?: string;
 }
 
 export const postData = async (body: PutDataProps) => {
+    // Convert email to have name appended to prevent overriding entries
+    if (body.attending) {
+        body.readableEmail = body.email
+        body.email = `${body.email}_${body.name}`
+    }
     const payload = {...myInit, body};
 
     return await API.post(apiName, path, payload);
