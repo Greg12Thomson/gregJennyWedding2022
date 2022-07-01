@@ -16,8 +16,8 @@ function WhenWhereWear() {
                     <Col className="when-where-wear-details" xs={12} md={6} >
                         <div>
                             <h3>Saturday October 8, 2022</h3>
-                            <p>Ceremony 1:30 - 2:15</p>
-                            <p>Reception 19:00 - ~11:30</p>
+                            <p>Ceremony 1 - 1:45</p>
+                            <p>Reception 19:00 - ~Midnight</p>
                         </div>
                         <div>
                             <h3>Cambo Estate</h3>

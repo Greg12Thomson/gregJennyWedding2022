@@ -7,7 +7,7 @@ function Footer() {
       <Container>
         <Row className="centered">
           <p>
-            Contact us at gregandjennywed@googlemail.com<br/>
+            Contact us at gregwedsjenny@gmail.com<br/>
             © 2022 By Jenny & Greg. Created by Greg (it is my job after all)
           </p>
         </Row>
