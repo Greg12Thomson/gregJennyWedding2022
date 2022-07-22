@@ -133,6 +133,20 @@ code {
   }
 }
 
+.gifts-page {
+  .img-thumbnail {
+    border: none;
+    border-radius: 18rem;
+    padding: 0 3rem 1rem 3rem;
+  }
+}
+.gifts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
 .our-story {
   padding-right: 30px;
   padding-left: 30px;

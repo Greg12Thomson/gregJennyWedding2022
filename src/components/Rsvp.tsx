@@ -11,7 +11,8 @@ function Rsvp() {
     const { search } = useLocation();
 
     const initialErrors: string[] = [];
-    const hasGuest = queryString.parse(search).key;
+    const qs = queryString.parse(search)
+    const hasGuest = qs.key || qs.KEY || qs.Key;
 
     const [errors, setErrors] = useState(initialErrors);
     const [name, setName] = useState("");
@@ -274,6 +275,7 @@ const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }:
                 </Col>)
             }
         </Row>
+        <p>Due to numbers, we are unable to invite everyone’s children, we really hope you might take this opportunity to take a well-deserved day off, child-free to celebrate with us.</p>
     </div>
 
 const AttendingCheckboxes = ({ setAttending, errors, hasGuest }: { setAttending: any; errors: string[], hasGuest: string | string[] | null }) =>

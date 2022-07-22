@@ -4,6 +4,7 @@ import OurStory from "./OurStory";
 import Details from "./Details";
 import GettingThere from "./GettingThere";
 import WhenWhereWear from "./WhenWhereWear";
+import Gifts from "./Gifts";
 
 function Content() {
     return (
@@ -23,6 +24,7 @@ function Content() {
             <Details />
             <WhenWhereWear />
             <GettingThere />
+            <Gifts />
         </div>
     );
 }
