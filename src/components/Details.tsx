@@ -1,5 +1,10 @@
 import React from 'react';
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row, Image} from "react-bootstrap";
+import Knot from "../images/Knot.png";
+import Glasses from "../images/Glasses.png";
+import Cambo from "../images/Cambo.png";
+import Cutlery from "../images/Cutlery.png";
+import Disco from "../images/Disco.png";
 
 function Details() {
     return (
@@ -11,26 +16,21 @@ function Details() {
                 <Row>
                     <Col className="when" xs={6} md={6}>
                         <Row>
+                            <Image src={Cambo} />
                             <p>
-                                Ceremony - 1pm
+                                Arrival - 12:30
                             </p>
                         </Row>
                         <Row>
+                            <Image src={Glasses} />
                             <p>
+                                Drinks - 14:00
                             </p>
                         </Row>
                         <Row>
+                            <Image src={Disco} />
                             <p>
-                                Dinner - 5pm
-                            </p>
-                        </Row>
-                        <Row>
-                            <p>
-                            </p>
-                        </Row>
-                        <Row>
-                            <p>
-                                Band starts - 8pm
+                                Party - 19:30
                             </p>
                         </Row>
                     </Col>
@@ -41,17 +41,15 @@ function Details() {
                         </Row>
                         <Row>
                             <p className="first">
-                                1.45pm - After ceremony
+                                13:00 - Ceremony
                             </p>
+                            <Image src={Knot} />
                         </Row>
                         <Row>
                             <p>
+                                16:30 - Dinner
                             </p>
-                        </Row>
-                        <Row>
-                            <p>
-                                7pm - Reception
-                            </p>
+                            <Image src={Cutlery} />
                         </Row>
                     </Col>
                 </Row>

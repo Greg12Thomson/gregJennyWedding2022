@@ -33,11 +33,30 @@
       margin-bottom: 1rem;
     }
 
+    img {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+    }
+
     .where .row {
       display: flex;
       flex-wrap: wrap;
       justify-content: left;
       padding-left: 1rem;
+      padding-bottom: 2rem;
+
+      p {
+        align-self: center;
+      }
+
+      img {
+        display: flex;
+        max-width: 8rem;
+        max-height: 6rem;
+        align-self: center;
+        filter: brightness(0) invert(1);
+      }
     }
 
     .when .row {
@@ -45,6 +64,20 @@
       flex-wrap: wrap;
       justify-content: right;
       padding-right: 1rem;
+      padding-bottom: 2rem;
+      align-self: center;
+
+      p {
+        align-self: center;
+      }
+
+      img {
+        display: flex;
+        max-width: 8rem;
+        max-height: 6rem;
+        align-self: center;
+        filter: brightness(0) invert(1);
+      }
     }
   
     .register {

@@ -54,7 +54,7 @@ function Home() {
               <Nav.Link href="#details">Running Order</Nav.Link>
               <Nav.Link href="#when-where-wear">When+Where+Wear</Nav.Link>
               <Nav.Link href="#travel-guide">Travel Guide</Nav.Link>
-              <Nav.Link href="#gifts">Registry</Nav.Link>
+              <Nav.Link href="#gifts">Gifts</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Col, Container, Image, Row} from "react-bootstrap";
 import MapImage from "../images/map.png";
+import Edinburgh from "../images/edin.png";
+
 
 
 function GettingThere() {
@@ -90,7 +92,7 @@ function GettingThere() {
             </p>
           </Col>
           <Col className="map" xs={12} md={6}>
-              <Image src={MapImage} thumbnail/>
+              <Image src={Edinburgh} thumbnail/>
           </Col>
           <Col xs={12} md={6}>
             <h5>St Andrews</h5>
