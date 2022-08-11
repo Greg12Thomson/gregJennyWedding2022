@@ -37,6 +37,10 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: left;
+      filter: brightness(0) invert(1);
+      background-color: none; 
+      border: none;
+      max-width: 100%;
     }
 
     .where .row {
