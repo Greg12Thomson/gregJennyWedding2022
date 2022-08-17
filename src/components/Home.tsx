@@ -11,7 +11,8 @@ export enum Pages {
   Story = "/story",
   GettingThere = "/getting-there",
   Rsvp = "/rsvp",
-  Confirm = "/confirmation"
+  Confirm = "/confirmation",
+  VIP = "/vip"
 }
 
 function Home() {

@@ -4,6 +4,7 @@ import Home from './Home';
 import Rsvp from './Rsvp';
 import RsvpEvening from './RsvpEvening';
 import Confirmation from "./Confirmation";
+import Vip from "./VipPage";
 
 export enum Pages {
   Home = "/",
@@ -12,7 +13,8 @@ export enum Pages {
   GettingThere = "/getting-there",
   Rsvp = "/rsvp",
   Evening = "/evening",
-  Confirm = "/confirmation"
+  Confirm = "/confirmation",
+  VIP = "/vip"
 }
 
 function NavBar() {
@@ -24,6 +26,7 @@ function NavBar() {
                 <Route exact path={Pages.Rsvp} component={Rsvp} />
                 <Route exact path={Pages.Evening} component={RsvpEvening} />
                 <Route exact path={Pages.Confirm} component={Confirmation} />
+                <Route exact path={Pages.VIP} component={Vip} />
                 <Route render={function () {
                     return <p>404: Page Not found</p>
                 }} />
