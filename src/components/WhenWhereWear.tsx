@@ -10,6 +10,13 @@ function WhenWhereWear() {
                     When Where Wear
                 </h1>
                 <Row>
+                    <Col className="ceilidh" xs={12} md={12}>
+                            The Gaelic word <strong>cèilidh</strong> (pronounced kay-lee) is often associated with kilts, highland dancing and a full band of Scottish musicians. But, it's a word which simply means <strong>visiting and socialising</strong> with friends.<br /><br />
+                            It's about celebrating the joys of <strong>community and connection</strong> to each other. An invite to 'come round for a wee cèilidh', requires <strong>no fuss or formality</strong>. Just bring yourself (and something to drink!).<br /><br />
+                            There will be an open bar with the usual things there, so if there is something specific you want to have or share with others, please feel free to bring it along and we can put it behind the bar.
+                    </Col>
+                </Row>
+                <Row>
                     <Col className="her-side" xs={12} md={6}>
                         <Image src={LeftImage} thumbnail/>
                     </Col>

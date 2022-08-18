@@ -121,6 +121,17 @@ code {
   align-self: center;
 }
 
+.ceilidh {
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  
+  @media (max-width: $mobile-max-width) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 .when-where-wear {
   .img-thumbnail {
     border: none;

@@ -32,10 +32,10 @@ function Vip() {
 
                         <strong>Saturday get married (eek!):</strong><br/><br/>
 
-                        You’ll be told more about this on the day, but be ready for 12:30 to be seated for the ceremony! You’ll be herded around for the rest of the day. <br/><br/>
+                        You’ll be told more about what to do on the day, but be ready for 12:30 to be seated for the ceremony! You’ll be herded around for the rest of the day. There will be an open bar with the usual things there, so if there is something specific you want to have or share with others, please feel free to bring it along and we can put it behind the bar. <br/><br/>
 
 
-                        <strong>Sunday a BYOB & Loony duke:</strong><br/><br/>
+                        <strong>Sunday BYOB & Loony duke:</strong><br/><br/>
 
                         Hungover but lovely day! Loony duke for anyone brave enough, so please bring a swimming suit, a wet suit is fine but that’s not very loony! Then a BBQ/leftover feast with board games and general shenanigans.<br/><br/>
 
