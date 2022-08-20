@@ -7,7 +7,7 @@ function WhenWhereWear() {
         <div className="when-where-wear" id="when-where-wear">
             <Container>
                 <h1 className="page-header">
-                    When Where Wear
+                    What When Where Wear
                 </h1>
                 <Row>
                     <Col className="ceilidh" xs={12} md={12}>
