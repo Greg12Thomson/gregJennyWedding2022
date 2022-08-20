@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Row, Image} from "react-bootstrap";
-import VanImage from "../images/judy.png";
+import VanImage from "../images/van.jpg";
 
 function Gifts() {
     return (

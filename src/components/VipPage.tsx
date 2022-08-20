@@ -24,7 +24,7 @@ function Vip() {
 
                         We also want you to enjoy this escape to our favourite place in Scotland, so don’t feel like you need to spend Friday or Sunday with us, although your presence is requested on the Saturday. <br/><br/>
 
-                        All rooms will either be en-suites, a cottage or part of a wing (posh, I know!). You will have access to communal living spaces and kitchens, think of it as a massive house. So weel free to bring any food and drink with you for the weekend, there are plenty of fridges and freezers. <br/><br/>
+                        All rooms will either be en-suites, a cottage or part of a wing (posh, I know!). You will have access to communal living spaces and kitchens, think of it as a massive house. So feel free to bring any food and drink with you for the weekend, there are plenty of fridges and freezers. <br/><br/>
 
                         <strong>Potluck Friday:</strong><br/><br/>
 

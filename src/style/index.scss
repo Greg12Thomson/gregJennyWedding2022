@@ -125,7 +125,7 @@ code {
   margin-right: 2rem;
   margin-left: 2rem;
   margin-bottom: 2rem;
-  
+
   @media (max-width: $mobile-max-width) {
     margin-right: 0;
     margin-left: 0;
@@ -147,7 +147,6 @@ code {
 .gifts-page {
   .img-thumbnail {
     border: none;
-    border-radius: 40rem;
     padding: 1rem 2rem;
   }
 }
