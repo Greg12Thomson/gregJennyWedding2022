@@ -49,14 +49,13 @@ function Rsvp() {
                     newErrors.push("song")
                 }
                 if (hasGuest) {
-                    if (guestName === "") {
-                        newErrors.push("guestName")
-                    }
-                    if (guestMain === undefined) {
-                        newErrors.push("guestMain")
-                    }
-                    if (guestStarter === undefined) {
-                        newErrors.push("guestStarter")
+                    if (guestName !== "") {
+                        if (guestMain === undefined) {
+                            newErrors.push("guestMain")
+                        }
+                        if (guestStarter === undefined) {
+                            newErrors.push("guestStarter")
+                        }
                     }
                 }
                 if (main === undefined) {
@@ -266,12 +265,9 @@ const NameInput = ({ name, setName, setGuestName, guestName, errors, hasGuest }:
                     <Form.Control className="form-control"
                         id="inputGuestName"
                         value={guestName}
-                        isInvalid={errors.includes("guestName")}
+                        placeholder="Leave blank if not attending"
                         onChange={(event) => setGuestName(event.target.value)}
-                        required />
-                    <div className={errors.includes("guestName") ? "" : "hidden"}>
-                        A name is required.
-                    </div>
+                    />
                 </Col>)
             }
         </Row>

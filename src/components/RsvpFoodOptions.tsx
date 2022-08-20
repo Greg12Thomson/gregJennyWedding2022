@@ -85,9 +85,9 @@ function RsvpFoodOptions({
             <div className="food-choice-label-secondary">
                 <p>A family favourite</p>
             </div>
-            {hasGuest &&
+            {guestName !== "" &&
                 <>
-                    <p className="guest-food-choice">Please select what <strong>{guestName || 'the second guest'}</strong> would like for the meal.</p>
+                    <p className="guest-food-choice">Please select what <strong>{guestName}</strong> would like for the meal.</p>
                     <label className="food-choice-label">Starter</label>
                     <div className="food-choice">
                         <Form.Check
