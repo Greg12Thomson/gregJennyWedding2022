@@ -28,7 +28,9 @@ function Vip() {
 
                         <strong>Potluck Friday:</strong><br/><br/>
 
-                        Rooms wll be available from 4pm but feel free to arrive earlier to help setup if you want - let us know if you plan to, to make sure someone is there to let you in. After setting up and everyone has arrived, we are going to do a potluck. So please do bring a dish with you, there is plenty of fridges and Cambo will keep all food in fridges until we are ready.<br/><br/>
+                        Rooms wll be available from 4pm but feel free to arrive earlier to help setup if you want - let us know if you plan to, to make sure someone is there to let you in. After setting up and everyone has arrived, we are going to do a potluck. So please do bring a dish with you, Cambo will keep all food in fridges and heat them up (if needed) once we are ready.<br/><br/>
+
+                        Feel free to bring either a starter, main or dessert but please take note of what is in it for us in the allergy club! <br/><br/>
 
                         <strong>Saturday get married (eek!):</strong><br/><br/>
 
