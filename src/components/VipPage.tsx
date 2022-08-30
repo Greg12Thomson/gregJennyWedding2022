@@ -20,7 +20,7 @@ function Vip() {
                     <Col xs={12} md={12} className="vip-content">
                         Thank you so much for saving the whole weekend to help us celebrate our wedding. Firstly, let us give you a little information about the room and paying. We have super limited space so when we say VIP, we mean it! <br/><br/>
 
-                        The price of accommodation covers you from the Friday to the Monday, however you can come and go as you please. The room will be yours the whole time no matter how long you stay (although we recommend staying the whole time because...duh?). <br/><br/>
+                        The price of accommodation covers you from the Friday to the Monday, however you can come and go as you please. The room will be yours the whole time no matter how long you stay (although we recommend staying the whole time because...duh?). Check in 4pm Friday and checkout 10am Monday. <br/><br/>
 
                         We also want you to enjoy this escape to our favourite place in Scotland, so don’t feel like you need to spend Friday or Sunday with us, although your presence is requested on the Saturday. <br/><br/>
 
