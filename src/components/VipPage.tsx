@@ -28,9 +28,13 @@ function Vip() {
 
                         <strong>Potluck Friday:</strong><br/><br/>
 
-                        Rooms wll be available from 4pm but feel free to arrive earlier to help setup if you want - let us know if you plan to, to make sure someone is there to let you in. After setting up and everyone has arrived, we are going to do a potluck. So please do bring a dish with you, Cambo will keep all food in fridges and heat them up (if needed) once we are ready.<br/><br/>
+                        <strong>potluck</strong><br/>
+                        [pot·​luck] noun<br/>
+                        A meal or party to which each of the guests contribute a dish.<br/><br/>
 
-                        Feel free to bring either a starter, main or dessert but please take note of what is in it for us in the allergy club! <br/><br/>
+                        This is an American term, so you can be forgiven if it confused you a bit. It can be a starter, main or dessert. You can make it vegan or meaty, but whatever it is, please take note of what is in it for us in the vegan and allergy clubs.<br/><br/>
+
+                        Rooms wll be available from 4pm but feel free to arrive earlier to help setup if you want - let us know if you plan to, to make sure someone is there to let you in. After setting up and everyone has arrived, we are going to do a potluck. So please do bring a dish with you, Cambo will keep all food in fridges and heat them up (if needed) once we are ready.<br/><br/>
 
                         <strong>Saturday get married (eek!):</strong><br/><br/>
 
