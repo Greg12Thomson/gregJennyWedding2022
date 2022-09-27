@@ -29,6 +29,9 @@ function GettingThere() {
               <Image src={MapImage} thumbnail/>
           </Col>
           <Col xs={12} md={6}>
+            <p> 
+              First of all Google maps tries to take you the wrong way, so here is the What3Words to the entrance: <a href="https://w3w.co/toned.diverting.reunion" target="_blank" rel="noreferrer noopener">///toned.diverting.reunion</a>
+            </p>
             <h5>From London</h5>
             <p>
               The best way (environmentally and time wise) is train. <br/><br/>

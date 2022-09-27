@@ -23,12 +23,13 @@ function WhenWhereWear() {
                     <Col className="when-where-wear-details" xs={12} md={6} >
                         <div>
                             <h3>Saturday October 8, 2022</h3>
-                            <p>Ceremony 1 - 1:45</p>
-                            <p>Reception 19:00 - ~Midnight</p>
+                            <p>Ceremony 13:00 - 13:45</p>
+                            <p>Reception 19:30 - ~Midnight</p>
                         </div>
                         <div>
                             <h3>Cambo Estate</h3>
                             <p>Kingsbarns, St Andrews, Fife, KY16 8QD</p>
+                            <p>What3Words: <a href="https://w3w.co/toned.diverting.reunion" target="_blank" rel="noreferrer noopener">///toned.diverting.reunion</a> </p>
                         </div>
                         <div>
                             <h3>Attire</h3>
