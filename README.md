@@ -1,6 +1,6 @@
-# Greg & Jenny's wedding website
+# Greg & Jenny's Wedding Website 👰‍♀️🤵‍♂️
 
-This project is the front end for [Greg and Jenny's website](https://www.gregwedsjenny.com/).
+This project is the front and back end for [Greg and Jenny's wedding website](https://www.gregwedsjenny.com/).
 
 ## Available Scripts
 
